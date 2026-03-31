@@ -2,4 +2,4 @@
 baseURL = '/'
 languageCode = 'ru-ru'
 title = 'Мой блог'
-theme = 'ananke'
+theme = 'ananke' 
