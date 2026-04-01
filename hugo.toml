@@ -1,5 +1,9 @@
 
-baseURL = '/'
+baseURL = https://my-blog-7v0.pages.dev/
 languageCode = 'ru-ru'
-title = 'Мой блог'
+title = "НЕСПЕШНЫЕ"
 theme = 'ananke' 
+[params]
+  description = "Мастерская неспешных решений."
+  background_color_class = "bg-washed-yellow"
+  recent_posts_number = 5
