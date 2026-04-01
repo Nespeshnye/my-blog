@@ -1,4 +1,4 @@
-baseURL = https://my-blog-7v0.pages.dev/
+baseURL = "https://my-blog-7v0.pages.dev/"
 languageCode = 'ru-ru'
 title = "НЕСПЕШНЫЕ"
 theme = 'ananke' 
