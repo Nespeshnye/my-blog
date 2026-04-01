@@ -3,6 +3,6 @@ languageCode = 'ru-ru'
 title = "НЕСПЕШНЫЕ"
 theme = 'ananke' 
 [params]
-  description = "Мастерская неспешных решений."
-  background_color_class = "bg-washed-yellow"
-  recent_posts_number = 5
+description = "Мастерская неспешных решений."
+background_color_class = "bg-washed-yellow"
+recent_posts_number = 5
