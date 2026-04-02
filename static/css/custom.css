@@ -35,9 +35,15 @@ header img,
     padding: 0 !important;
 }
 
-/* Сделаем главный заголовок чуть более "весомым" */
+/* Сделаем главный заголовок чуть более "весомым" и поднимем его */
 .f1 { 
     font-weight: 700;
-    text-transform: uppercase; /* Все буквы заглавные для солидности */
-    letter-spacing: 0.1em; /* Больше отступа между буквами в заголовке */
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    
+    /* Добавьте эту строку, чтобы поднять надпись выше */
+    margin-top: -50px !important; /* Чем больше число после минуса, тем выше взлетит текст */
+    
+    display: inline-block; /* Позволяет заголовку двигаться правильно */
+    vertical-align: middle; 
 }
