@@ -12,7 +12,7 @@ body, .bg-black {
     max-height: 220px !important;
     width: auto !important;
     margin-top: 10px !important;
-    margin-left: 10px !important;
+    margin-left: 5px !important;
     display: inline-block !important;
     vertical-align: middle !important;
 }
@@ -30,7 +30,7 @@ body, .bg-black {
     display: inline-block !important;
     
     /* Двигаем вверх и вправо от стрекозы */
-    top: -200px !important; /* Чем больше минус, тем выше поднимется */
+    top: -250px !important; /* Чем больше минус, тем выше поднимется */
     left: 40px !important; /* Отступ от крыльев стрекозы */
     
     z-index: 999 !important; /* Чтобы текст был поверх всех слоев */
