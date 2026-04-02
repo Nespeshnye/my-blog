@@ -8,3 +8,4 @@ site_logo = "images/logo.png"
 description = "Мастерская неспешных решений."
 background_color_class = "bg-black"
 recent_posts_number = 5
+google_fonts = ["Lora:ital,wght@0,400;0,700;1,400"

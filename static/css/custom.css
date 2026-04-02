@@ -13,4 +13,17 @@ body {
     width: auto; /* Сохраняем пропорции */
     margin-right: 15px; /* Отступ от текста "NESPESHNYE" */
     vertical-align: middle; /* Выравнивание по центру текста */
+}/* Подключаем шрифт Lora для всего сайта */
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400&display=swap');
+
+body, h1, h2, h3, h4, h5, h6, p {
+    font-family: 'Lora', serif !important;
+    letter-spacing: 0.02em; /* Чуть-чуть раздвинем буквы для "воздуха" */
+}
+
+/* Сделаем главный заголовок чуть более "весомым" */
+.f1 { 
+    font-weight: 700;
+    text-transform: uppercase; /* Все буквы заглавные для солидности */
+    letter-spacing: 0.1em; /* Больше отступа между буквами в заголовке */
 }
