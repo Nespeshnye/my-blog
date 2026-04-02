@@ -8,25 +8,21 @@ body {
     background-color: #1a1612 !important; 
 }
 
-/* Финальная доводка размера и выравнивания логотипа */
+/* Силовое выравнивание логотипа */
 .logo {
-    /* 1. Делаем стрекозу заметно меньше (было 55px, ставим 38px) */
-    max-height: 38px; 
-    width: auto; /* Сохраняем пропорции */
+    max-height: 38px !important; 
+    width: auto !important;
 
-    /* 2. Позиционирование и выравнивание */
-    display: inline-block;
-    vertical-align: middle; /* Центрируем по тексту заголовка */
+    display: inline-block !important;
+    vertical-align: middle !important;
 
-    /* 3. Идеально одинаковые отступы Сверху и Слева */
-    margin-top: 20px; /* Отступ от верхнего края (чуть уменьшил для баланса) */
-    margin-left: 15px; /* Отступ от левого края */
+    /* Принудительные отступы */
+    margin-top: 20px !important;    
+    margin-left: 20px !important;   
     
-    /* 4. Отступы, чтобы текст не прилипал */
-    margin-bottom: 15px; /* Симметрия шапки снизу */
-    margin-right: 15px; /* Отступ справа до текста "NESPESHNYE" */
+    margin-bottom: 15px !important; 
+    margin-right: 15px !important;  
 }
-
 
 /* Сделаем главный заголовок чуть более "весомым" */
 .f1 { 
