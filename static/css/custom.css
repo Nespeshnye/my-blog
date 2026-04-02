@@ -7,3 +7,10 @@ body {
 .bg-black { 
     background-color: #1a1612 !important; 
 }
+/* Настройка размера логотипа */
+.logo {
+    max-height: 60px; /* Высота логотипа в пикселях */
+    width: auto; /* Сохраняем пропорции */
+    margin-right: 15px; /* Отступ от текста "NESPESHNYE" */
+    vertical-align: middle; /* Выравнивание по центру текста */
+}
