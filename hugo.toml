@@ -1,6 +1,6 @@
 baseURL = "https://my-blog-7v0.pages.dev/"
 languageCode = 'ru-ru'
-title = "NESPESHNYE."
+title = "NESPESHNYE"
 theme = 'ananke' 
 [params]
 custom_css = ["css/custom.css"]
