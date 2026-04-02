@@ -1,4 +1,4 @@
-/* 1. ОБЩИЙ ФОН И ШРИФТ */
+/* 1. БАЗОВЫЙ ФОН И ШРИФТ */
 @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400&display=swap');
 
 body, .bg-black { 
@@ -13,32 +13,29 @@ body, .bg-black {
     display: inline-block !important;
     vertical-align: middle !important;
     
-    /* Прижимаем к левому верхнему углу */
     margin-top: 10px !important;    
     margin-left: 10px !important;   
-    margin-right: 40px !important; /* Отступ до текста */
 }
 
-/* 3. ЗАГОЛОВОК (NESPESHNYE) — Тот самый рабочий метод */
+/* 3. ЗАГОЛОВОК (NESPESHNYE) — ВОЗВРАТ К ИСХОДНОМУ ВИДУ */
 .f1, .f1 a, header h1 {
     font-family: 'Lora', serif !important;
     font-weight: 700 !important;
     text-transform: uppercase !important;
     letter-spacing: 0.1em !important;
     
-    /* КРУПНЫЙ РАЗМЕР */
-    font-size: 80px !important; 
-    color: white !important;
-
+    /* Мы убираем жесткий font-size, чтобы тема сама выбрала размер, 
+       который вам изначально нравился */
+    
     display: inline-block !important;
     vertical-align: middle !important;
 
-    /* ПОДНИМАЕМ ВВЕРХ (Тянем за «лебедку») */
-    /* Так как логотип 220px, нам нужно сильно потянуть вверх от базовой линии */
-    margin-top: -120px !important; 
+    /* Возвращаем умеренный подъем вверх */
+    margin-top: -60px !important; 
+    margin-left: 20px !important;
 }
 
-/* Убираем контейнерные отступы темы, чтобы они не мешали */
+/* Обнуление отступов темы */
 .pa3 {
     padding: 0 !important;
 }
