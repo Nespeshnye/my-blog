@@ -8,20 +8,26 @@ body {
     background-color: #1a1612 !important; 
 }
 
-/* Силовое выравнивание логотипа */
-.logo {
+/* Силовое выравнивание логотипа и любого изображения в шапке */
+.logo, 
+header img, 
+.header-logo img {
     max-height: 38px !important; 
     width: auto !important;
-
     display: inline-block !important;
     vertical-align: middle !important;
 
-    /* Принудительные отступы */
+    /* Принудительные отступы от краев */
     margin-top: 20px !important;    
     margin-left: 20px !important;   
     
     margin-bottom: 15px !important; 
     margin-right: 15px !important;  
+}
+
+/* Убираем стандартные отступы контейнера, если они мешают */
+.pa3 {
+    padding: 0 !important;
 }
 
 /* Сделаем главный заголовок чуть более "весомым" */
