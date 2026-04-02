@@ -35,15 +35,18 @@ header img,
     padding: 0 !important;
 }
 
-/* Сделаем главный заголовок чуть более "весомым" и поднимем его */
+/* Силовое перемещение заголовка вверх */
 .f1 { 
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.1em !important;
     
-    /* Добавьте эту строку, чтобы поднять надпись выше */
-    margin-top: -50px !important; /* Чем больше число после минуса, тем выше взлетит текст */
+    display: inline-block !important;
+
+    /* Эта команда двигает текст вверх по оси Y */
+    /* Чем больше число после минуса, тем выше поднимется надпись */
+    transform: translateY(-80px) !important; 
     
-    display: inline-block; /* Позволяет заголовку двигаться правильно */
-    vertical-align: middle; 
+    /* Добавим отступ слева, чтобы буквы не наезжали на большую стрекозу */
+    margin-left: 30px !important; 
 }
