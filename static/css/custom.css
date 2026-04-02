@@ -35,18 +35,24 @@ header img,
     padding: 0 !important;
 }
 
-/* Силовое перемещение заголовка вверх */
+/* Абсолютное позиционирование заголовка */
 .f1 { 
     font-weight: 700 !important;
     text-transform: uppercase !important;
     letter-spacing: 0.1em !important;
     
-    display: inline-block !important;
-
-    /* Эта команда двигает текст вверх по оси Y */
-    /* Чем больше число после минуса, тем выше поднимется надпись */
-    transform: translateY(-80px) !important; 
+    /* 1. Вырываем текст из общей очереди */
+    position: absolute !important; 
     
-    /* Добавим отступ слева, чтобы буквы не наезжали на большую стрекозу */
-    margin-left: 30px !important; 
+    /* 2. Ставим его на нужную высоту (настройте под центр стрекозы) */
+    /* Чем МЕНЬШЕ число, тем ВЫШЕ текст. Попробуйте начать с 70px */
+    top: 90px !important; 
+
+    /* 3. Отодвигаем вправо, чтобы не накладывался на стрекозу */
+    /* Ваша стрекоза 220px, значит ставим чуть больше, например 250px */
+    left: 250px !important; 
+
+    /* 4. Обнуляем старые отступы, чтобы не мешали */
+    margin: 0 !important; 
+    transform: none !important; 
 }
