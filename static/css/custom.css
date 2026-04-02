@@ -11,22 +11,25 @@ body, .bg-black {
     display: none !important;
 }
 
-/* 3. НАСТРОЙКА НАДПИСИ NESPESHNYE */
+/* 3. НАСТРОЙКА НАДПИСИ NESPESHNYE — ИДЕАЛЬНЫЙ ЦЕНТР */
 .f1, .f1 a, header h1 {
     font-family: 'Lora', serif !important;
     font-weight: 700 !important;
     text-transform: uppercase !important;
-    letter-spacing: 0.15em !important; /* Чуть больше воздуха между буквами */
+    letter-spacing: 0.15em !important;
     
-    /* РАЗМЕР: Я поставил 90px. Если это много/мало — смело меняйте цифру */
     font-size: 90px !important; 
 
-    /* ПОЗИЦИЯ: */
+    /* ПРАВИЛА ДЛЯ ЦЕНТРИРОВАНИЯ: */
     display: block !important;
-    margin-top: 40px !important; /* Отступ от верхнего края сайта */
-    margin-left: 50px !important; /* Отступ от левого края сайта */
+    width: 100% !important; /* Растягиваем блок на всю ширину */
+    text-align: center !important; /* Ровняем текст ровно по середине */
     
-    /* Убираем лишние эффекты темы */
+    /* ВЫСОТА: оставляем ту, что вас устроила (40px) */
+    margin-top: 40px !important;   
+    margin-left: 0 !important; /* Обнуляем боковой отступ, чтобы не было перекоса */
+    margin-right: 0 !important;
+    
     text-decoration: none !important;
 }
 
