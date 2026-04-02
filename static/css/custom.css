@@ -12,7 +12,7 @@ body {
 .logo, 
 header img, 
 .header-logo img {
-    max-height: 148px !important; 
+    max-height: 220px !important; 
     width: auto !important;
     display: inline-block !important;
     vertical-align: middle !important;
