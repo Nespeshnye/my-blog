@@ -30,7 +30,7 @@ body, .bg-black {
     display: inline-block !important;
     
     /* Двигаем вверх и вправо от стрекозы */
-    top: -100px !important; /* Чем больше минус, тем выше поднимется */
+    top: -200px !important; /* Чем больше минус, тем выше поднимется */
     left: 40px !important; /* Отступ от крыльев стрекозы */
     
     z-index: 999 !important; /* Чтобы текст был поверх всех слоев */
