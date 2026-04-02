@@ -17,21 +17,23 @@ body, .bg-black {
     vertical-align: middle !important;
 }
 
-/* 4. ЗАГОЛОВОК (NESPESHNYE) — МЕТОД "ПЛУГ" */
-/* Мы обращаемся не просто к .f1, а к ссылке внутри него, чтобы тема не спорила */
+/* 4. ЗАГОЛОВОК (NESPESHNYE) — УВЕЛИЧЕНИЕ И ПОДЪЕМ */
 .f1, .f1 a, header h1 {
     font-family: 'Lora', serif !important;
     font-weight: 700 !important;
     text-transform: uppercase !important;
     letter-spacing: 0.1em !important;
     
-    /* Сдвигаем текст относительно его обычного места */
+    /* ДОБАВЬТЕ ЭТУ СТРОКУ: */
+    /* Попробуйте 4rem или 5rem (стандарт обычно около 2.5rem) */
+    font-size: 4.5rem !important; 
+
     position: relative !important;
     display: inline-block !important;
     
-    /* Двигаем вверх и вправо от стрекозы */
-    top: -250px !important; /* Чем больше минус, тем выше поднимется */
-    left: 40px !important; /* Отступ от крыльев стрекозы */
+    /* Не забудьте подкорректировать высоту, так как крупный текст может "упасть" */
+    top: -180px !important;   
+    left: 50px !important;    
     
-    z-index: 999 !important; /* Чтобы текст был поверх всех слоев */
+    z-index: 999 !important;
 }
