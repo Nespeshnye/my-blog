@@ -1,58 +1,37 @@
-/* Цвет основного фона (нижняя часть) */
-body { 
+/* 1. ПОДКЛЮЧЕНИЕ ШРИФТА */
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400&display=swap');
+
+/* 2. ОБЩИЕ НАСТРОЙКИ (ФОН И ТЕКСТ) */
+body, .bg-black { 
     background-color: #1a1612 !important; 
+    font-family: 'Lora', serif !important;
 }
 
-/* Цвет верхней плашки (шапки), которая сейчас черная */
-.bg-black { 
-    background-color: #1a1612 !important; 
-}
-
-/* Силовое выравнивание логотипа и любого изображения в шапке */
-.logo, 
-header img, 
-.header-logo img {
-    max-height: 220px !important; 
+/* 3. ЛОГОТИП (СТРЕКОЗА 220px) */
+.logo, header img {
+    max-height: 220px !important;
     width: auto !important;
+    margin-top: 10px !important;
+    margin-left: 10px !important;
     display: inline-block !important;
     vertical-align: middle !important;
-
-    /* Принудительные отступы от краев */
-    margin-top: 20px !important;    
-    margin-left: 5px !important;   
-    
-    margin-bottom: 15px !important; 
-    margin-right: 15px !important;  
 }
 
-/* Убираем стандартные отступы контейнера, если они мешают */
-.pa3 {
-    padding: 0 !important;
-}
-
-/* Убираем стандартные отступы контейнера, если они мешают */
-.pa3 {
-    padding: 0 !important;
-}
-
-/* Абсолютное позиционирование заголовка */
-.f1 { 
+/* 4. ЗАГОЛОВОК (NESPESHNYE) — МЕТОД "ПЛУГ" */
+/* Мы обращаемся не просто к .f1, а к ссылке внутри него, чтобы тема не спорила */
+.f1, .f1 a, header h1 {
+    font-family: 'Lora', serif !important;
     font-weight: 700 !important;
     text-transform: uppercase !important;
     letter-spacing: 0.1em !important;
     
-    /* 1. Вырываем текст из общей очереди */
-    position: absolute !important; 
+    /* Сдвигаем текст относительно его обычного места */
+    position: relative !important;
+    display: inline-block !important;
     
-    /* 2. Ставим его на нужную высоту (настройте под центр стрекозы) */
-    /* Чем МЕНЬШЕ число, тем ВЫШЕ текст. Попробуйте начать с 70px */
-    top: 90px !important; 
-
-    /* 3. Отодвигаем вправо, чтобы не накладывался на стрекозу */
-    /* Ваша стрекоза 220px, значит ставим чуть больше, например 250px */
-    left: 250px !important; 
-
-    /* 4. Обнуляем старые отступы, чтобы не мешали */
-    margin: 0 !important; 
-    transform: none !important; 
+    /* Двигаем вверх и вправо от стрекозы */
+    top: -100px !important; /* Чем больше минус, тем выше поднимется */
+    left: 40px !important; /* Отступ от крыльев стрекозы */
+    
+    z-index: 999 !important; /* Чтобы текст был поверх всех слоев */
 }
