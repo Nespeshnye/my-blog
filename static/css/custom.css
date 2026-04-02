@@ -1,1 +1,9 @@
-body { background-color: #1a1612 !important; }
+/* Цвет основного фона (нижняя часть) */
+body { 
+    background-color: #1a1612 !important; 
+}
+
+/* Цвет верхней плашки (шапки), которая сейчас черная */
+.bg-black { 
+    background-color: #1a1612 !important; 
+}
