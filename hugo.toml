@@ -3,8 +3,7 @@ languageCode = 'ru-ru'
 title = "Мастерская неспешных решений."
 theme = 'ananke' 
 [params]
+custom_css = ["css/custom.css"]
 description = "Мастерская неспешных решений."
 background_color_class = "bg-washed-yellow"
 recent_posts_number = 5
-custom_css = ["css/custom.css"]
-custom.css"]
