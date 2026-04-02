@@ -17,24 +17,21 @@ body, .bg-black {
     vertical-align: middle !important;
 }
 
-/* 4. ЗАГОЛОВОК (NESPESHNYE) — ПЕРЕХОД НА ПИКСЕЛИ */
+/* 4. ЗАГОЛОВОК (NESPESHNYE) — МЕТОД "ПЛУГ" */
+/* Мы обращаемся не просто к .f1, а к ссылке внутри него, чтобы тема не спорила */
 .f1, .f1 a, header h1 {
     font-family: 'Lora', serif !important;
     font-weight: 700 !important;
     text-transform: uppercase !important;
     letter-spacing: 0.1em !important;
     
-    /* Устанавливаем четкий размер в пикселях */
-    /* Попробуйте 80px (это крупно). Если мало — ставьте 100px или 120px */
-    font-size: 80px !important; 
-
+    /* Сдвигаем текст относительно его обычного места */
     position: relative !important;
     display: inline-block !important;
     
-    /* ВАЖНО: При таком крупном шрифте нужно сильнее тянуть вверх */
-    /* Попробуйте -210px или даже -240px, чтобы заголовок не "упал" под стрекозу */
-    top: -210px !important;   
-    left: 60px !important;    
+    /* Двигаем вверх и вправо от стрекозы */
+    top: -100px !important; /* Чем больше минус, тем выше поднимется */
+    left: 40px !important; /* Отступ от крыльев стрекозы */
     
-    z-index: 999 !important;
+    z-index: 999 !important; /* Чтобы текст был поверх всех слоев */
 }
