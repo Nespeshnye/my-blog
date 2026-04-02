@@ -4,6 +4,7 @@ title = "NESPESHNYE"
 theme = 'ananke' 
 [params]
 custom_css = ["css/custom.css"]
+site_logo = "images/logo.png"
 description = "Мастерская неспешных решений."
 background_color_class = "bg-black"
 recent_posts_number = 5
