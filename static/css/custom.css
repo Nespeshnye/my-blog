@@ -39,26 +39,32 @@ body, .bg-black {
 }
 /* --- 4. ЭФФЕКТЫ ФОНА: СИЛОВОЕ ЗЕРНО И ВИНЬЕТКА --- */
 
-/* 4.1. Прорезаем прозрачность во всех слоях темы */
-.bg-black, 
-.bg-near-black, 
-header, 
-footer, 
-main,
-article,
-section,
-div[class^="bg-"] {
+/* --- 4. ЭФФЕКТЫ ФОНА: МЯГКАЯ ФАКТУРА И ТЕНЬ --- */
+
+/* 4.1. Очистка слоев темы */
+.bg-black, .bg-near-black, header, footer, main, article, section {
     background-color: transparent !important;
     background-image: none !important;
 }
 
-/* 4.2. Настройка единого базового слоя (Цвет + Зерно) */
+/* 4.2. Мягкое зерно (Текстура "Dust") */
 html, body {
     background-color: #1a1612 !important;
-    /* Создаем программный шум (зерно) */
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E") !important;
-    background-repeat: repeat !important;
+    /* Используем готовую мягкую текстуру шума, она не пикселит */
+    background-image: url("https://www.transparenttextures.com/patterns/stardust.png") !important;
     background-attachment: fixed !important;
-    margin: 0;
-    padding: 0;
+}
+
+/* 4.3. Оптическая виньетка (Глубина) */
+body::after {
+    content: "" !important;
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    /* Мы делаем центр очень прозрачным, а края — мягко уходящими в тень */
+    background: radial-gradient(circle, transparent 60%, rgba(0,0,0,0.3) 100%) !important;
+    pointer-events: none !important;
+    z-index: 9999 !important;
 }
