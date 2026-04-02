@@ -1,39 +1,41 @@
-/* 1. ПОДКЛЮЧЕНИЕ ШРИФТА */
+/* 1. ШРИФТ И ФОН */
 @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400&display=swap');
 
-/* 2. ОБЩИЕ НАСТРОЙКИ (ФОН И ТЕКСТ) */
 body, .bg-black { 
     background-color: #1a1612 !important; 
     font-family: 'Lora', serif !important;
 }
 
-/* 3. ЛОГОТИП (СТРЕКОЗА 220px) */
-.logo, header img {
+/* 2. ЛОГОТИП (СТРЕКОЗА 220px) */
+.logo, header img, .header-logo img {
     max-height: 220px !important;
     width: auto !important;
     margin-top: 10px !important;
-    margin-left: 5px !important;
+    margin-left: 10px !important;
     display: inline-block !important;
     vertical-align: middle !important;
 }
 
-/* 4. ЗАГОЛОВОК (ИСПРАВЛЕНИЕ СДВИГА) */
+/* 3. ЗАГОЛОВОК (NESPESHNYE) - ВОЗВРАТ К РАБОЧЕМУ ВАРЯНТУ */
 .f1, .f1 a, header h1 {
     font-family: 'Lora', serif !important;
-    font-size: 80px !important; /* Оставляем размер, который вам подошел */
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.1em !important;
+    
+    /* УВЕЛИЧЕННЫЙ РАЗМЕР В ПИКСЕЛЯХ */
+    font-size: 70px !important; 
 
-    position: relative !important;
     display: inline-block !important;
+    vertical-align: middle !important;
 
-    /* 1. СДВИГАЕМ ВПРАВО: */
-    /* Ваша стрекоза 220px. Чтобы текст был ПРАВЕЕ неё, 
-       нужно поставить значение больше 220. Попробуйте 280px */
-    left: 280px !important; 
+    /* ВОЗВРАЩАЕМ ОТСТУПЫ, КОТОРЫЕ ВАМ НРАВИЛИСЬ */
+    /* Если текст слишком низко, увеличиваем минус в margin-top */
+    margin-top: -100px !important; 
+    margin-left: 40px !important;
+}
 
-    /* 2. КОРРЕКТИРУЕМ ВЫСОТУ: */
-    /* Если текст слишком низко или высоко, подправьте эту цифру */
-    top: -240px !important;   
-
-    z-index: 999 !important;
-    margin: 0 !important;
+/* Убираем лишние отступы темы, которые могут двигать текст */
+.pa3 {
+    padding: 0 !important;
 }
