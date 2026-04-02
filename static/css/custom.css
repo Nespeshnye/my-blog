@@ -1,4 +1,4 @@
-/* 1. БАЗОВЫЙ ФОН И ШРИФТ */
+/* 1. ОБЩИЙ ФОН И ШРИФТ LORA */
 @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400&display=swap');
 
 body, .bg-black { 
@@ -6,36 +6,31 @@ body, .bg-black {
     font-family: 'Lora', serif !important;
 }
 
-/* 2. ЛОГОТИП (СТРЕКОЗА 220px) */
+/* 2. СКРЫВАЕМ ЛОГОТИП (Чтобы не мешал настройке текста) */
 .logo, header img, .header-logo img {
-    max-height: 220px !important;
-    width: auto !important;
-    display: inline-block !important;
-    vertical-align: middle !important;
-    
-    margin-top: 10px !important;    
-    margin-left: 10px !important;   
+    display: none !important;
 }
 
-/* 3. ЗАГОЛОВОК (NESPESHNYE) — ВОЗВРАТ К ИСХОДНОМУ ВИДУ */
+/* 3. НАСТРОЙКА НАДПИСИ NESPESHNYE */
 .f1, .f1 a, header h1 {
     font-family: 'Lora', serif !important;
     font-weight: 700 !important;
     text-transform: uppercase !important;
-    letter-spacing: 0.1em !important;
+    letter-spacing: 0.15em !important; /* Чуть больше воздуха между буквами */
     
-    /* Мы убираем жесткий font-size, чтобы тема сама выбрала размер, 
-       который вам изначально нравился */
-    
-    display: inline-block !important;
-    vertical-align: middle !important;
+    /* РАЗМЕР: Я поставил 90px. Если это много/мало — смело меняйте цифру */
+    font-size: 90px !important; 
 
-    /* Возвращаем умеренный подъем вверх */
-    margin-top: -60px !important; 
-    margin-left: 20px !important;
+    /* ПОЗИЦИЯ: */
+    display: block !important;
+    margin-top: 40px !important; /* Отступ от верхнего края сайта */
+    margin-left: 50px !important; /* Отступ от левого края сайта */
+    
+    /* Убираем лишние эффекты темы */
+    text-decoration: none !important;
 }
 
-/* Обнуление отступов темы */
+/* Убираем контейнерные отступы темы */
 .pa3 {
     padding: 0 !important;
 }
