@@ -24,20 +24,25 @@
     }
 }
 /* ============================================================
-   БЛОК ОЧИСТКИ ГЛАВНОЙ СТРАНИЦЫ
+   УСИЛЕННЫЙ БЛОК ОЧИСТКИ ГЛАВНОЙ СТРАНИЦЫ
    ============================================================ */
 
-/* 1. Скрываем гигантский текстовый заголовок в центре "шапки" */
-.home .header-title-container {
-    display: none !important;
-}
-
-/* 2. Убираем контейнер, который создает пустое пространство под этот заголовок */
+/* Скрываем центральный блок заголовка целиком через его структуру */
+.home header div.tc-l.pv4.pv6-l,
+.home header div.tc-l.pv3.pv4-l,
+.home .header-title-container,
 .home .tc-l.mt2.mt3-l.ph3.ph4-l {
     display: none !important;
+    visibility: hidden !important;
+    height: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
 }
 
-/* 3. Убираем "подзаголовок", если он вдруг решит появиться */
-.home .f4.fw4.white-70.mt3.mb4 {
+/* Скрываем сам текст заголовка, если он пробился */
+.home h1.f2, 
+.home h1.f1, 
+.home h1.f-subheadline-l,
+.home .lh-title {
     display: none !important;
 }
