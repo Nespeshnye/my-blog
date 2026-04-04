@@ -4,9 +4,5 @@ title = 'NESPESHNYE'
 theme = 'ananke'
 
 [params]
-  # Эта строка подключает наш файл с правилами центровки
+  # Проверьте, что путь указан без косой черты в начале
   custom_css = ["css/custom.css"]
-  
-  # Базовые настройки темы Ananke для красоты
-  background_color_class = "bg-black"
-  recent_posts_number = 3

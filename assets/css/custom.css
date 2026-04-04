@@ -1,26 +1,35 @@
-/* Глобальная центровка для всех страниц и постов */
+/* Глобальная центровка для всего контента */
 .nested-copy-line-height, 
 .prose, 
-article {
-    max-width: 800px; /* Ограничиваем ширину для удобства чтения */
+main,
+article,
+.pa3,
+.ph4-l {
+    max-width: 800px !important;
     margin-left: auto !important;
     margin-right: auto !important;
-    text-align: center; /* Центрируем текст */
+    text-align: center !important; /* Принудительная центровка */
 }
 
-/* Центровка всех изображений и видео внутри постов */
-article img, 
-article video, 
-article figure {
-    display: block;
-    margin: 20px auto !important;
-    border-radius: 8px;
+/* Центровка заголовков и абзацев */
+h1, h2, h3, h4, p, span {
+    text-align: center !important;
 }
 
-/* Защита таймера: это правило гарантирует, что глобальные стили 
-   не «сломают» ваш шорткод */
-#btc-countdown, .btc-timer-card {
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
+/* Центровка таймера (защита вашего любимого стиля) */
+.timer-outer-wrapper, 
+#btc-countdown, 
+.btc-timer-card {
+    display: flex !important;
+    justify-content: center !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+/* Фикс для мобильных: убираем лишние отступы темы слева */
+@media screen and (max-width: 600px) {
+    .ph4-l, .pa3 {
+        padding-left: 10px !important;
+        padding-right: 10px !important;
+    }
 }
