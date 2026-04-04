@@ -1,44 +1,40 @@
-<div class="timer-outer-wrapper" style="width: 100%; display: flex; justify-content: center; margin: 30px 0;">
-    <div class="btc-timer-card" style="
-        background: #000; 
-        color: #f7931a; 
-        padding: 30px 15px; 
-        border-radius: 15px; 
-        border: 2px solid #f7931a; 
+<div style="width: 100%; display: flex; justify-content: center; margin: 20px 0;">
+    <div id="btc-countdown" style="
         text-align: center; 
-        width: 100%; 
-        max-width: 500px;
-        box-shadow: 0 10px 30px rgba(247, 147, 26, 0.2);
+        padding: 15px; 
+        font-family: 'Courier New', monospace; 
+        color: #333; 
+        border-bottom: 2px solid #f7931a; 
+        display: inline-block;
+        min-width: 280px;
     ">
-        <div style="font-size: 0.8rem; letter-spacing: 3px; margin-bottom: 10px; text-transform: uppercase; opacity: 0.9;">
+        <div style="font-size: 0.8rem; letter-spacing: 2px; color: #f7931a; font-weight: bold; margin-bottom: 5px;">
             TIME UNTIL THE FINAL SATOSHI
         </div>
         
         <div id="timer-display" style="
-            font-family: 'Courier New', Courier, monospace; 
-            font-size: 2.8rem; 
-            font-weight: 900; 
-            line-height: 1; 
-            margin-bottom: 10px;
+            font-size: 2.2rem; 
+            font-weight: bold; 
+            letter-spacing: 1px;
+            color: #222;
         ">
             00Y 000D 00H 00M 00S
         </div>
         
-        <div style="font-size: 1rem; font-weight: bold; opacity: 0.8;">
+        <div style="font-size: 0.9rem; margin-top: 5px; font-weight: bold; color: #777;">
             (EST. 2140)
         </div>
     </div>
 </div>
 
 <style>
-    /* Магия для мобильных: увеличиваем шрифт, чтобы цифры не "разваливались" */
+    /* Адаптация для мобильных: текст не будет вылезать за края */
     @media screen and (max-width: 600px) {
         #timer-display {
-            font-size: 1.8rem !important; /* Крупный шрифт на смартфоне */
+            font-size: 1.4rem !important; /* Уменьшаем только на смартфонах */
         }
-        .btc-timer-card {
-            padding: 20px 10px !important;
-            margin: 0 10px; /* Чтобы не прилипало к краям экрана */
+        #btc-countdown {
+            min-width: 90%;
         }
     }
 </style>
@@ -57,7 +53,6 @@
         const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
         const seconds = Math.floor((diff % (1000 * 60)) / 1000);
 
-        // Форматируем, чтобы всегда было две цифры (01 вместо 1)
         const format = (num) => String(num).padStart(2, '0');
 
         document.getElementById("timer-display").innerHTML = 
