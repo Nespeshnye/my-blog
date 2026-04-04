@@ -1,12 +1,12 @@
-baseURL = "https://my-blog-7v0.pages.dev/"
+baseURL = 'https://nespeshnye.com/'
 languageCode = 'ru-ru'
-title = "NESPESHNYE"
-theme = 'ananke' 
+title = 'NESPESHNYE'
+theme = 'ananke'
+
 [params]
-custom_css = ["css/custom.css"]
-site_logo = "images/logo.png"
-description = "Мастерская неспешных решений."
-background_color_class = "bg-black"
-recent_posts_number = 5
-google_fonts = ["Lora:ital,wght@0,400;0,700;1,400"]
+  # Эта строка подключает наш файл с правилами центровки
   custom_css = ["css/custom.css"]
+  
+  # Базовые настройки темы Ananke для красоты
+  background_color_class = "bg-black"
+  recent_posts_number = 3
