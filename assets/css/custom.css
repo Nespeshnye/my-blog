@@ -1,0 +1,26 @@
+/* Глобальная центровка для всех страниц и постов */
+.nested-copy-line-height, 
+.prose, 
+article {
+    max-width: 800px; /* Ограничиваем ширину для удобства чтения */
+    margin-left: auto !important;
+    margin-right: auto !important;
+    text-align: center; /* Центрируем текст */
+}
+
+/* Центровка всех изображений и видео внутри постов */
+article img, 
+article video, 
+article figure {
+    display: block;
+    margin: 20px auto !important;
+    border-radius: 8px;
+}
+
+/* Защита таймера: это правило гарантирует, что глобальные стили 
+   не «сломают» ваш шорткод */
+#btc-countdown, .btc-timer-card {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
