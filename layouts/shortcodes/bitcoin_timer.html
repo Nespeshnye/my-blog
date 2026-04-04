@@ -1,40 +1,45 @@
-<div class="btc-container" style="
-    text-align: center; 
-    margin: 40px auto; 
-    max-width: 600px; 
-    padding: 20px; 
-    background: #1a1a1a; 
-    color: #f7931a; 
-    border: 1px solid #333; 
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
-">
-    <div style="font-size: 0.9rem; letter-spacing: 2px; margin-bottom: 15px; opacity: 0.8;">
-        TIME UNTIL THE FINAL SATOSHI
-    </div>
-    
-    <div id="timer-display" style="
-        font-family: 'Courier New', monospace; 
-        font-size: 2.2rem; 
-        font-weight: bold; 
-        color: #f7931a;
-        line-height: 1.2;
+<div class="timer-outer-wrapper" style="width: 100%; display: flex; justify-content: center; margin: 30px 0;">
+    <div class="btc-timer-card" style="
+        background: #000; 
+        color: #f7931a; 
+        padding: 30px 15px; 
+        border-radius: 15px; 
+        border: 2px solid #f7931a; 
+        text-align: center; 
+        width: 100%; 
+        max-width: 500px;
+        box-shadow: 0 10px 30px rgba(247, 147, 26, 0.2);
     ">
-        Загрузка...
+        <div style="font-size: 0.8rem; letter-spacing: 3px; margin-bottom: 10px; text-transform: uppercase; opacity: 0.9;">
+            TIME UNTIL THE FINAL SATOSHI
+        </div>
+        
+        <div id="timer-display" style="
+            font-family: 'Courier New', Courier, monospace; 
+            font-size: 2.8rem; 
+            font-weight: 900; 
+            line-height: 1; 
+            margin-bottom: 10px;
+        ">
+            00Y 000D 00H 00M 00S
+        </div>
+        
+        <div style="font-size: 1rem; font-weight: bold; opacity: 0.8;">
+            (EST. 2140)
+        </div>
     </div>
 </div>
 
 <style>
-    /* Этот блок сделает текст под таймером тоже по центру */
-    #btc-container + p {
-        text-align: center;
-        font-size: 1.2rem;
-        color: #555;
-        margin-top: 20px;
-    }
-    /* Для мобильных телефонов делаем шрифт чуть крупнее */
-    @media (max-width: 600px) {
-        #timer-display { font-size: 1.6rem !important; }
+    /* Магия для мобильных: увеличиваем шрифт, чтобы цифры не "разваливались" */
+    @media screen and (max-width: 600px) {
+        #timer-display {
+            font-size: 1.8rem !important; /* Крупный шрифт на смартфоне */
+        }
+        .btc-timer-card {
+            padding: 20px 10px !important;
+            margin: 0 10px; /* Чтобы не прилипало к краям экрана */
+        }
     }
 </style>
 
@@ -44,12 +49,19 @@
         const now = new Date().getTime();
         const diff = targetDate - now;
 
+        if (diff < 0) return;
+
         const years = Math.floor(diff / (1000 * 60 * 60 * 24 * 365.25));
         const days = Math.floor((diff % (1000 * 60 * 60 * 24 * 365.25)) / (1000 * 60 * 60 * 24));
         const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+        // Форматируем, чтобы всегда было две цифры (01 вместо 1)
+        const format = (num) => String(num).padStart(2, '0');
 
         document.getElementById("timer-display").innerHTML = 
-            years + "Y " + days + "D " + hours + "H";
+            years + "Y " + days + "D " + format(hours) + "H " + format(minutes) + "M " + format(seconds) + "S";
     }
     setInterval(updateBtcTimer, 1000);
     updateBtcTimer();
