@@ -1,72 +1,56 @@
-<div id="nespeshnye-btc-terminal">
-    <div class="btc-label-terminal">TIME UNTIL THE FINAL SATOSHI (EST. 2140)</div>
-    <div id="btc-countdown-display">INITIALIZING...</div>
+<div class="btc-container" style="
+    text-align: center; 
+    margin: 40px auto; 
+    max-width: 600px; 
+    padding: 20px; 
+    background: #1a1a1a; 
+    color: #f7931a; 
+    border: 1px solid #333; 
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+">
+    <div style="font-size: 0.9rem; letter-spacing: 2px; margin-bottom: 15px; opacity: 0.8;">
+        TIME UNTIL THE FINAL SATOSHI
+    </div>
+    
+    <div id="timer-display" style="
+        font-family: 'Courier New', monospace; 
+        font-size: 2.2rem; 
+        font-weight: bold; 
+        color: #f7931a;
+        line-height: 1.2;
+    ">
+        Загрузка...
+    </div>
 </div>
 
 <style>
-    /* Стили изолированы только для этого блока */
-    #nespeshnye-btc-terminal {
-        border: 1px dashed rgba(212, 175, 55, 0.2); /* Едва заметная пунктирная рамка */
-        padding: 30px;
-        background: rgba(26, 22, 18, 0.4); /* Полупрозрачный фон в тон вашего сайта */
-        margin: 40px auto;
+    /* Этот блок сделает текст под таймером тоже по центру */
+    #btc-container + p {
         text-align: center;
-        max-width: 100%;
-        border-radius: 2px;
+        font-size: 1.2rem;
+        color: #555;
+        margin-top: 20px;
     }
-
-    .btc-label-terminal {
-        font-family: 'Lora', serif;
-        font-size: 12px;
-        color: #d4af37; /* Приглушенное золото */
-        letter-spacing: 0.2em;
-        margin-bottom: 15px;
-        opacity: 0.6;
-    }
-
-    #btc-countdown-display {
-        font-family: 'Lora', serif;
-        color: #ff9d00; /* Янтарный цвет терминала Fallout */
-        font-size: 28px;
-        font-weight: 700;
-        text-shadow: 0 0 8px rgba(255, 157, 0, 0.3);
-        letter-spacing: 0.05em;
-    }
-
-    /* Адаптивность для мобильных */
+    /* Для мобильных телефонов делаем шрифт чуть крупнее */
     @media (max-width: 600px) {
-        #btc-countdown-display { font-size: 20px; }
+        #timer-display { font-size: 1.6rem !important; }
     }
 </style>
 
 <script>
-    (function() {
-        // Константа даты 2140 года
-        const targetDate = new Date("Jan 1, 2140 00:00:00").getTime();
+    function updateBtcTimer() {
+        const targetDate = new Date("January 1, 2140 00:00:00").getTime();
+        const now = new Date().getTime();
+        const diff = targetDate - now;
 
-        const updateTimer = function() {
-            const now = new Date().getTime();
-            const diff = targetDate - now;
+        const years = Math.floor(diff / (1000 * 60 * 60 * 24 * 365.25));
+        const days = Math.floor((diff % (1000 * 60 * 60 * 24 * 365.25)) / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
 
-            if (diff < 0) {
-                document.getElementById("btc-countdown-display").innerHTML = "THE ERA HAS ENDED";
-                return;
-            }
-
-            const y = Math.floor(diff / (1000 * 60 * 60 * 24 * 365.25));
-            const d = Math.floor((diff % (1000 * 60 * 60 * 24 * 365.25)) / (1000 * 60 * 60 * 24));
-            const h = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const m = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-            const s = Math.floor((diff % (1000 * 60)) / 1000);
-
-            // Форматируем вывод: добавляем нули перед цифрами, если нужно
-            const format = (num) => String(num).padStart(2, '0');
-
-            document.getElementById("btc-countdown-display").innerHTML = 
-                y + "y " + d + "d " + format(h) + ":" + format(m) + ":" + format(s);
-        };
-
-        setInterval(updateTimer, 1000);
-        updateTimer(); // Запуск сразу при загрузке
-    })();
+        document.getElementById("timer-display").innerHTML = 
+            years + "Y " + days + "D " + hours + "H";
+    }
+    setInterval(updateBtcTimer, 1000);
+    updateBtcTimer();
 </script>
