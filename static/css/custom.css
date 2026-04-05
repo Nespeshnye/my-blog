@@ -1,93 +1,26 @@
-/* 1. ОБЩИЙ ФОН И ШРИФТ LORA */
-@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400&display=swap');
-
-body, .bg-black { 
-    background-color: #1a1612 !important; 
-    font-family: 'Lora', serif !important;
+/* Главный фон сайта — цвет темного пепла */
+body {
+    background-color: #1a1a1a !important; 
+    color: #d4a373 !important; /* Цвет старой меди для текста */
+    margin: 0;
+    padding: 0;
 }
 
-/* 2. СКРЫВАЕМ ЛОГОТИП (Чтобы не мешал настройке текста) */
-.logo, header img, .header-logo img {
-    display: none !important;
+/* Убираем белую полосу внизу (основной контент) */
+.bg-white, .bg-near-white {
+    background-color: #1a1a1a !important;
 }
 
-/* 3. НАСТРОЙКА НАДПИСИ NESPESHNYE — ИДЕАЛЬНЫЙ ЦЕНТР */
-.f1, .f1 a, header h1 {
-    font-family: 'Lora', serif !important;
-    font-weight: 700 !important;
-    text-transform: uppercase !important;
-    letter-spacing: 0.15em !important;
-    
-    font-size: 90px !important; 
-
-    /* ПРАВИЛА ДЛЯ ЦЕНТРИРОВАНИЯ: */
-    display: block !important;
-    width: 100% !important; /* Растягиваем блок на всю ширину */
-    text-align: center !important; /* Ровняем текст ровно по середине */
-    
-    /* ВЫСОТА: оставляем ту, что вас устроила (40px) */
-    margin-top: 40px !important;   
-    margin-left: 0 !important; /* Обнуляем боковой отступ, чтобы не было перекоса */
-    margin-right: 0 !important;
-    
-    text-decoration: none !important;
+/* Центровка и оформление таймера */
+#btc-countdown {
+    display: block;
+    margin: 30px auto;
+    text-align: center;
+    color: #cd7f32; /* Медный оттенок */
 }
 
-/* Убираем контейнерные отступы темы */
-.pa3 {
-    padding: 0 !important;
-}
-/* --- 4. ЭФФЕКТЫ ФОНА: СИЛОВОЕ ЗЕРНО И ВИНЬЕТКА --- */
-
-/* --- 4. ЭФФЕКТЫ ФОНА: МЯГКАЯ ФАКТУРА И ТЕНЬ --- */
-
-/* 4.1. Очистка слоев темы */
-.bg-black, .bg-near-black, header, footer, main, article, section {
-    background-color: transparent !important;
-    background-image: none !important;
-}
-
-/* 4.2. Мягкое зерно (Текстура "Dust") */
-html, body {
-    background-color: #1a1612 !important;
-    /* Используем готовую мягкую текстуру шума, она не пикселит */
-    background-image: url("https://www.transparenttextures.com/patterns/stardust.png") !important;
-    background-attachment: fixed !important;
-}
-
-/* 4.3. Оптическая виньетка (Глубина) */
-body::after {
-    content: "" !important;
-    position: fixed !important;
-    top: 0 !important;
-    left: 0 !important;
-    width: 100% !important;
-    height: 100% !important;
-    /* Мы делаем центр очень прозрачным, а края — мягко уходящими в тень */
-    background: radial-gradient(circle, transparent 60%, rgba(0,0,0,0.3) 100%) !important;
-    pointer-events: none !important;
-    z-index: 9999 !important;
-}
-/* ============================================================
-   УСИЛЕННЫЙ БЛОК ОЧИСТКИ ГЛАВНОЙ СТРАНИЦЫ
-   ============================================================ */
-
-/* Скрываем центральный блок заголовка целиком через его структуру */
-.home header div.tc-l.pv4.pv6-l,
-.home header div.tc-l.pv3.pv4-l,
-.home .header-title-container,
-.home .tc-l.mt2.mt3-l.ph3.ph4-l {
-    display: none !important;
-    visibility: hidden !important;
-    height: 0 !important;
-    padding: 0 !important;
-    margin: 0 !important;
-}
-
-/* Скрываем сам текст заголовка, если он пробился */
-.home h1.f2, 
-.home h1.f1, 
-.home h1.f-subheadline-l,
-.home .lh-title {
-    display: none !important;
+/* Усиленная центровка текста */
+.prose, main, article {
+    text-align: center !important;
+    color: #d4a373 !important;
 }
