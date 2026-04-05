@@ -4,7 +4,9 @@ title = 'NESPESHNYE'
 theme = 'ananke'
 
 [params]
+  # Указываем путь к нашему новому файлу в папке static
   custom_css = ["css/style.css"]
-  # Оставляем пустым, чтобы тема не навязывала свои "черно-белые" полосы
+  
+  # Оставляем эти параметры пустыми, чтобы работал ТОЛЬКО ваш CSS
   background_color_class = ""
   body_classes = ""
