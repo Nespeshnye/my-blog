@@ -1,36 +1,15 @@
 <style>
-  /* 1. ПРИНУДИТЕЛЬНЫЙ ФОН: ЦВЕТ ТЕМНОГО ПЕПЛА */
-  /* Мы красим все возможные блоки темы Ananke, чтобы не было белых полос */
-  html, body, header, main, footer, article, section, 
-  .bg-black, .bg-white, .bg-near-white, .ph3, .pv4 {
-      background-color: #1a1a1a !important;
-      color: #d4a373 !important; /* Цвет старой меди для текста */
-      border: none !important;
-  }
-
-  /* 2. УДАЛЕНИЕ ЦЕНТРАЛЬНОЙ НАДПИСИ NESPESHNYE */
-  /* Скрываем блок заголовка, который Ananke вставляет принудительно */
-  .home .header-title-container, 
-  .home .tc-l.pv4.pv6-l, 
-  .home h1.f1, 
-  .home h1.f2 {
-      display: none !important;
-      height: 0 !important;
-      padding: 0 !important;
-      margin: 0 !important;
-  }
-
-  /* 3. ЦЕНТРОВКА И ШРИФТ (ТАЙМЕР И ПРИВЕТСТВИЕ) */
-  #btc-countdown, .nested-copy-line-height {
-      text-align: center !important;
-      display: block !important;
-      margin: 40px auto !important;
+  /* ИЗМЕНЕНИЕ ШРИФТА И ЦВЕТА ТЕКСТА */
+  /* Применяем ко всем основным текстовым тегам */
+  body, p, h1, h2, h3, h4, h5, h6, a, span, li, blockquote, div {
+      /* Шрифт в стиле старого терминала/ Fallout */
       font-family: 'Courier New', Courier, monospace !important;
-      font-size: 1.5rem;
+      /* Цвет меди, как у таймера */
+      color: #cd7f32 !important;
   }
 
-  /* Цвет самого таймера — более яркая медь */
-  #btc-countdown {
-      color: #cd7f32 !important;
+  /* Убеждаемся, что ссылки тоже медные и не подчеркнуты (по желанию) */
+  a {
+      text-decoration: none !important;
   }
 </style>
