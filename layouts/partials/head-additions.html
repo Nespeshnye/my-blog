@@ -11,25 +11,29 @@
       border: none !important;
   }
 
-  /* ПАРАМЕТР №3: ЗАМЕНА ТЕКСТА В УГЛУ */
-  /* Находим заголовок, делаем оригинальный текст невидимым */
-  .f3.fw2.hs-headline, 
-  header a.f3, 
-  header .dib.pv1 {
+  /* ПАРАМЕТР №3: ЗАМЕНА ТЕКСТА В УГЛУ (SLOW LIVING) */
+  .f3.fw2.hs-headline, header a.f3, header .dib.pv1 {
       color: transparent !important;
       position: relative;
   }
-
-  /* Рисуем новый текст "Slow Living" поверх прозрачного */
-  .f3.fw2.hs-headline::after, 
-  header a.f3::after, 
-  header .dib.pv1::after {
+  .f3.fw2.hs-headline::after, header a.f3::after, header .dib.pv1::after {
       content: "Slow Living";
-      color: #cd7f32 !important; /* Тот же медный цвет */
+      color: #cd7f32 !important;
       position: absolute;
       left: 0;
       top: 0;
       visibility: visible;
       white-space: nowrap;
+  }
+
+  /* ПАРАМЕТР №4: ЖИРНЫЙ И КРУПНЫЙ ЗАГОЛОВОК NESPESHNYE */
+  /* Нацеливаемся на главный заголовок в центре страницы */
+  .home h1.f2, 
+  .home h1.f1, 
+  .home .f-subheadline-l {
+      font-weight: 900 !important; /* Максимальная жирность */
+      font-size: 4rem !important; /* Увеличенный размер */
+      letter-spacing: 2px; /* Небольшой отступ между буквами для стиля */
+      text-transform: uppercase;
   }
 </style>
