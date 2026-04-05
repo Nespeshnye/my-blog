@@ -1,26 +1,11 @@
-/* Главный фон сайта — цвет темного пепла */
 body {
-    background-color: #1a1a1a !important; 
-    color: #d4a373 !important; /* Цвет старой меди для текста */
-    margin: 0;
-    padding: 0;
-}
-
-/* Убираем белую полосу внизу (основной контент) */
-.bg-white, .bg-near-white {
     background-color: #1a1a1a !important;
-}
-
-/* Центровка и оформление таймера */
-#btc-countdown {
-    display: block;
-    margin: 30px auto;
-    text-align: center;
-    color: #cd7f32; /* Медный оттенок */
-}
-
-/* Усиленная центровка текста */
-.prose, main, article {
-    text-align: center !important;
     color: #d4a373 !important;
+}
+
+/* Эффект меди для таймера */
+#btc-countdown {
+    color: #cd7f32 !important;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
 }

@@ -5,6 +5,6 @@ theme = 'ananke'
 
 [params]
   custom_css = ["css/style.css"]
-  # Убираем жесткие привязки к цветам темы, даем волю вашему CSS
-  background_color_class = "" 
+  # Оставляем пустым, чтобы тема не навязывала свои "черно-белые" полосы
+  background_color_class = ""
   body_classes = ""
