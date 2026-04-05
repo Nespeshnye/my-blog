@@ -1,14 +1,35 @@
 <style>
-  /* ПАРАМЕТР №1: ШРИФТ И ЦВЕТ (УЖЕ РАБОТАЕТ) */
+  /* ПАРАМЕТР №1: ШРИФТ И ЦВЕТ */
   body, p, h1, h2, h3, h4, h5, h6, a, span, li, blockquote, div {
       font-family: 'Courier New', Courier, monospace !important;
       color: #cd7f32 !important;
   }
 
-  /* ПАРАМЕТР №2: ВОЗВРАТ ФОНА (ПЕПЕЛ) */
-  /* Красим все основные контейнеры, чтобы убрать черно-белый раскол */
+  /* ПАРАМЕТР №2: ФОН (ПЕПЕЛ) */
   html, body, .bg-black, .bg-white, .bg-near-white, header, main, footer, article, section {
       background-color: #1a1a1a !important;
       border: none !important;
+  }
+
+  /* ПАРАМЕТР №3: ЗАМЕНА ТЕКСТА В УГЛУ */
+  /* Находим заголовок, делаем оригинальный текст невидимым */
+  .f3.fw2.hs-headline, 
+  header a.f3, 
+  header .dib.pv1 {
+      color: transparent !important;
+      position: relative;
+  }
+
+  /* Рисуем новый текст "Slow Living" поверх прозрачного */
+  .f3.fw2.hs-headline::after, 
+  header a.f3::after, 
+  header .dib.pv1::after {
+      content: "Slow Living";
+      color: #cd7f32 !important; /* Тот же медный цвет */
+      position: absolute;
+      left: 0;
+      top: 0;
+      visibility: visible;
+      white-space: nowrap;
   }
 </style>
