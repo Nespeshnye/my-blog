@@ -3,14 +3,34 @@
   body, p, h1, h2, h3, h4, h5, h6, a, span, li, blockquote, div {
       font-family: 'Courier New', Courier, monospace !important;
       color: #cd7f32 !important;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.8); /* Тень для читаемости на текстуре */
   }
 
-  /* ПАРАМЕТР №2 + №5: ФОН "РЖАВАЯ МЕДЬ" */
-  /* Используем сложный градиент: от темного пепла к окисленной меди */
-  html, body, .bg-black, .bg-white, .bg-near-white, header, main, footer, article, section {
-      background: radial-gradient(circle at center, #3d2b1f 0%, #1a1a1a 70%), 
-                  repeating-linear-gradient(45deg, rgba(139, 69, 19, 0.05) 0px, rgba(139, 69, 19, 0.05) 2px, transparent 2px, transparent 4px) !important;
+  /* ПАРАМЕТР №2 + №5: ТЕКСТУРА "ПОТЕРТАЯ МЕДЬ / ЦАРАПИНЫ" */
+  html {
+      /* Основа: Глубокий темный пепел */
       background-color: #1a1a1a !important;
+      
+      /* Наложение слоев: 
+         1. Тонкие горизонтальные линии (царапины/развертка)
+         2. Диагональные потертости (неравномерный окрас) 
+      */
+      background-image: 
+          repeating-linear-gradient(0deg, rgba(0,0,0,0.15) 0px, rgba(0,0,0,0.15) 1px, transparent 1px, transparent 2px),
+          linear-gradient(135deg, #1a1a1a 0%, #2b1d14 50%, #1a1a1a 100%) !important;
+      
+      background-attachment: fixed !important;
+      background-size: cover !important;
+  }
+
+  body {
+      background: transparent !important;
+  }
+
+  /* Убираем все фоны блоков темы */
+  .bg-black, .bg-white, .bg-near-white, header, main, footer, article, section, .ph3, .pv4 {
+      background: transparent !important;
+      background-color: transparent !important;
       border: none !important;
   }
 
