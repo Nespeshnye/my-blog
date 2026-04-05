@@ -5,8 +5,11 @@
       color: #cd7f32 !important;
   }
 
-  /* ПАРАМЕТР №2: ФОН (ПЕПЕЛ) */
+  /* ПАРАМЕТР №2 + №5: ФОН "РЖАВАЯ МЕДЬ" */
+  /* Используем сложный градиент: от темного пепла к окисленной меди */
   html, body, .bg-black, .bg-white, .bg-near-white, header, main, footer, article, section {
+      background: radial-gradient(circle at center, #3d2b1f 0%, #1a1a1a 70%), 
+                  repeating-linear-gradient(45deg, rgba(139, 69, 19, 0.05) 0px, rgba(139, 69, 19, 0.05) 2px, transparent 2px, transparent 4px) !important;
       background-color: #1a1a1a !important;
       border: none !important;
   }
@@ -24,19 +27,5 @@
       top: 0;
       visibility: visible;
       white-space: nowrap;
-  }
-
-  /* ПАРАМЕТР №4: ЖИРНЫЙ И КРУПНЫЙ ЗАГОЛОВОК (УСИЛЕННЫЙ) */
-  /* Целимся во все возможные варианты главного заголовка Ananke */
-  .home header h1, 
-  .home .f2, 
-  .home .f1, 
-  .home .f-subheadline-l,
-  header .tc-l.pv4.pv6-l h1,
-  header .tc-l.pv3.pv4-l h1 {
-      font-weight: 900 !important;
-      font-size: 5rem !important; /* Увеличили еще больше для заметности */
-      line-height: 1.1 !important;
-      letter-spacing: 0.1em !important;
   }
 </style>
