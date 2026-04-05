@@ -5,7 +5,6 @@ theme = 'ananke'
 
 [params]
   custom_css = ["css/style.css"]
-  background_color_class = "bg-black"
-  # Эти две строки заставляют тему перерисовать "шапку" правильно
-  site_logo = ""
-  featured_image = ""
+  # Убираем жесткие привязки к цветам темы, даем волю вашему CSS
+  background_color_class = "" 
+  body_classes = ""
