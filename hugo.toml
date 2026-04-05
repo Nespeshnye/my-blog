@@ -4,5 +4,7 @@ title = 'NESPESHNYE'
 theme = 'ananke'
 
 [params]
-  # Проверьте, что путь указан без косой черты в начале
-  custom_css = ["css/custom.css"]
+ custom_css = ["css/style.css"]
+  # Добавляем эти две строки для проверки
+  site_logo = "" 
+  featured_image = ""
