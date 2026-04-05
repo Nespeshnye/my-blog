@@ -26,14 +26,17 @@
       white-space: nowrap;
   }
 
-  /* ПАРАМЕТР №4: ЖИРНЫЙ И КРУПНЫЙ ЗАГОЛОВОК NESPESHNYE */
-  /* Нацеливаемся на главный заголовок в центре страницы */
-  .home h1.f2, 
-  .home h1.f1, 
-  .home .f-subheadline-l {
-      font-weight: 900 !important; /* Максимальная жирность */
-      font-size: 4rem !important; /* Увеличенный размер */
-      letter-spacing: 2px; /* Небольшой отступ между буквами для стиля */
-      text-transform: uppercase;
+  /* ПАРАМЕТР №4: ЖИРНЫЙ И КРУПНЫЙ ЗАГОЛОВОК (УСИЛЕННЫЙ) */
+  /* Целимся во все возможные варианты главного заголовка Ananke */
+  .home header h1, 
+  .home .f2, 
+  .home .f1, 
+  .home .f-subheadline-l,
+  header .tc-l.pv4.pv6-l h1,
+  header .tc-l.pv3.pv4-l h1 {
+      font-weight: 900 !important;
+      font-size: 5rem !important; /* Увеличили еще больше для заметности */
+      line-height: 1.1 !important;
+      letter-spacing: 0.1em !important;
   }
 </style>
