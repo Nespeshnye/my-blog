@@ -1,15 +1,14 @@
 <style>
-  /* ИЗМЕНЕНИЕ ШРИФТА И ЦВЕТА ТЕКСТА */
-  /* Применяем ко всем основным текстовым тегам */
+  /* ПАРАМЕТР №1: ШРИФТ И ЦВЕТ (УЖЕ РАБОТАЕТ) */
   body, p, h1, h2, h3, h4, h5, h6, a, span, li, blockquote, div {
-      /* Шрифт в стиле старого терминала/ Fallout */
       font-family: 'Courier New', Courier, monospace !important;
-      /* Цвет меди, как у таймера */
       color: #cd7f32 !important;
   }
 
-  /* Убеждаемся, что ссылки тоже медные и не подчеркнуты (по желанию) */
-  a {
-      text-decoration: none !important;
+  /* ПАРАМЕТР №2: ВОЗВРАТ ФОНА (ПЕПЕЛ) */
+  /* Красим все основные контейнеры, чтобы убрать черно-белый раскол */
+  html, body, .bg-black, .bg-white, .bg-near-white, header, main, footer, article, section {
+      background-color: #1a1a1a !important;
+      border: none !important;
   }
 </style>
