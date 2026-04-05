@@ -1,14 +1,14 @@
 <style>
-  /* ПАРАМЕТР №1: ШРИФТ И ЦВЕТ + ЭФФЕКТ ПОТЕРТОСТИ ТЕКСТА */
+  /* ПАРАМЕТР №1: ШРИФТ И ЯРКИЙ ЦВЕТ (ВОЗВРАТ) */
   body, p, h1, h2, h3, h4, h5, h6, a, span, li, blockquote, div {
       font-family: 'Courier New', Courier, monospace !important;
       color: #cd7f32 !important;
-      /* Эффект "выцветшей краски" через легкую прозрачность и тень */
-      text-shadow: 1px 1px 0px rgba(0,0,0,0.5), 0 0 5px rgba(205, 127, 50, 0.2);
-      opacity: 0.9;
+      /* Убираем прозрачность, оставляем только четкость */
+      opacity: 1 !important;
+      text-shadow: none !important;
   }
 
-  /* ПАРАМЕТР №2 + №5: ФОН (УЖЕ РАБОТАЕТ) */
+  /* ПАРАМЕТР №2 + №5: РАБОЧИЙ ФОН (БЕЗ ИЗМЕНЕНИЙ) */
   html {
       background-color: #1a1a1a !important;
       background-image: 
@@ -23,25 +23,9 @@
       border: none !important;
   }
 
-  /* ПАРАМЕТР №3: SLOW LIVING */
+  /* ПАРАМЕТР №3: SLOW LIVING (БЕЗ ИЗМЕНЕНИЙ) */
   .f3.fw2.hs-headline, header a.f3, header .dib.pv1 { color: transparent !important; position: relative; }
   .f3.fw2.hs-headline::after, header a.f3::after, header .dib.pv1::after {
       content: "Slow Living"; color: #cd7f32 !important; position: absolute; left: 0; top: 0; visibility: visible;
-  }
-
-  /* ПАРАМЕТР №6: МЕДНАЯ СТРЕКОЗА В УГЛУ */
-  body::before {
-      content: "";
-      position: fixed;
-      top: 20px;
-      right: 20px;
-      width: 80px;
-      height: 80px;
-      /* Мы используем упрощенный силуэт стрекозы через маску */
-      background: linear-gradient(45deg, #cd7f32, #c0c0c0, #8b4513);
-      clip-path: polygon(50% 0%, 40% 20%, 0% 15%, 40% 40%, 20% 100%, 50% 60%, 80% 100%, 60% 40%, 100% 15%, 60% 20%);
-      opacity: 0.4; /* Полупрозрачность для эффекта старины */
-      z-index: -1; /* Чтобы не мешала кликать по кнопкам */
-      filter: drop-shadow(2px 2px 2px rgba(0,0,0,0.8));
   }
 </style>
