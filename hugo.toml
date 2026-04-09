@@ -1,6 +1,6 @@
 baseURL = 'https://nespeshnye.com/'
 languageCode = 'ru-ru'
-title = 'NESPESHNYE'
+title = "NESPESHNYE | Slow Living"
 theme = 'ananke'
 
 [params]
