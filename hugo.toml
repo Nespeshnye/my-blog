@@ -8,3 +8,8 @@ theme = 'ananke'
   custom_css = []
   background_color_class = ""
   body_classes = ""
+  
+  [[menu.main]]
+  name = "ГУЩА СОБЫТИЙ"
+  url = "/posts/news/"
+  weight = 10
