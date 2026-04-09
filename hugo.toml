@@ -13,8 +13,8 @@ theme = 'ananke'
   name = "ГУЩА СОБЫТИЙ"
   url = "/posts/news/"
   weight = 10
-  
+
   [[menu.main]]
-    name = "[ ОСАДОК МЫСЛЕЙ ]"
-    url = "/thoughts/"
-    weight = 20
+  name = "ОСАДОК МЫСЛЕЙ"
+  url = "/thoughts/"
+  weight = 20
