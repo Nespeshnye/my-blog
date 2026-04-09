@@ -1,49 +1,57 @@
 <style>
-  /* 1. ВОЗВРАТ МЕДНОГО ФОНА (То, что пропало) */
-  .bg-black { background-color: #cd7f32 !important; }
-  .black-70 { color: #4b3621 !important; }
-  .white-90 { color: #4b3621 !important; }
-  
-  /* Общий стиль текста и шрифта */
-  body, a, span, h1, h2, h3 { 
-      color: #4b3621 !important; 
+  /* 1. ШРИФТ И ЦВЕТ */
+  body, p, h1, h2, h3, h4, h5, h6, a, span, li, blockquote, div {
       font-family: 'Courier New', Courier, monospace !important;
+      color: #cd7f32 !important;
+      opacity: 1 !important;
   }
 
-  /* 2. ЛОГОТИП-СТРЕКОЗА */
+  /* 2. ФОН (ПЕПЕЛ + ЦАРАПИНЫ) */
+  html {
+      background-color: #1a1a1a !important;
+      background-image: 
+          repeating-linear-gradient(0deg, rgba(0,0,0,0.15) 0px, rgba(0,0,0,0.15) 1px, transparent 1px, transparent 2px),
+          linear-gradient(135deg, #1a1a1a 0%, #2b1d14 50%, #1a1a1a 100%) !important;
+      background-attachment: fixed !important;
+      background-size: cover !important;
+  }
+  body { background: transparent !important; }
+  .bg-black, .bg-white, .bg-near-white, header, main, footer, article, section, .ph3, .pv4 {
+      background: transparent !important;
+      border: none !important;
+  }
+
+  /* 3. НАДПИСЬ SLOW LIVING В УГЛУ */
+  .f3.fw2.hs-headline, header a.f3, header .dib.pv1 { color: transparent !important; position: relative; }
+  .f3.fw2.hs-headline::after, header a.f3::after, header .dib.pv1::after {
+      content: "Slow Living"; color: #cd7f32 !important; position: absolute; left: 0; top: 0; visibility: visible;
+  }
+
+  /* 4. МЕДНЫЙ СКРОЛЛБАР */
+  ::-webkit-scrollbar { width: 10px; }
+  ::-webkit-scrollbar-track { background: #1a1a1a; }
+  ::-webkit-scrollbar-thumb { background: #8b4513; border: 1px solid #cd7f32; }
+  ::-webkit-scrollbar-thumb:hover { background: #cd7f32; }
+  * { scrollbar-width: thin; scrollbar-color: #8b4513 #1a1a1a; }
+
+  /* 5. ЛОГОТИП СТРЕКОЗЫ (ТОТ САМЫЙ РАБОЧИЙ ВАРИАНТ) */
   body::after {
-      content: ""; position: fixed; top: 15px; right: 15px; width: 70px; height: 70px; z-index: 100; pointer-events: none;
+      content: "";
+      position: fixed;
+      top: 15px;
+      right: 15px;
+      width: 70px;
+      height: 70px;
+      z-index: 10;
+      pointer-events: none;
       background-image: linear-gradient(135deg, #cd7f32 0%, #8b4513 50%, #4b3621 100%);
       -webkit-mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M50 20c-1 0-2 5-2 15s1 45 2 45 2-35 2-45-1-15-2-15zM48 38c-15-5-35-5-35 2s15 8 35 3M52 38c15-5 35-5 35 2s-15 8-35 3M48 48c-12-4-28-4-28 2s12 6 28 2M52 48c12-4 28-4 28 2s-12 6-28 2"/></svg>');
       mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M50 20c-1 0-2 5-2 15s1 45 2 45 2-35 2-45-1-15-2-15zM48 38c-15-5-35-5-35 2s15 8 35 3M52 38c15-5 35-5 35 2s-15 8-35 3M48 48c-12-4-28-4-28 2s12 6 28 2M52 48c12-4 28-4 28 2s-12 6-28 2"/></svg>');
-      -webkit-mask-size: contain; mask-size: contain; -webkit-mask-repeat: no-repeat; opacity: 0.8; filter: drop-shadow(2px 2px 2px rgba(0,0,0,0.8));
-  }
-
-  /* 3. НАВИГАЦИЯ В УГЛУ (NESPESHNYE) */
-  .f3.fw2.hs-headline, header a.f3 {
-      font-size: 0 !important;
-  }
-  .f3.fw2.hs-headline::before, header a.f3::before {
-      content: "NESPESHNYE";
-      font-size: 1.5rem !important;
-      letter-spacing: 2px;
-      visibility: visible;
-  }
-
-  /* 4. ЦЕНТРАЛЬНЫЙ ЗАГОЛОВОК (Slow Living) */
-  .f2.f1-l.fw2.white-90.mb0.lh-title {
-      display: none !important;
-  }
-
-  /* Создаем новую надпись в центре на чистом месте */
-  .tc-l.pv4.pv6-l.ph3.ph4-ns::before {
-      content: "Slow Living";
-      display: block;
-      font-size: 4rem !important;
-      font-weight: bold;
-      text-transform: uppercase;
-      letter-spacing: 5px;
-      margin-bottom: 1rem;
-      color: #4b3621 !important;
+      -webkit-mask-size: contain;
+      mask-size: contain;
+      -webkit-mask-repeat: no-repeat;
+      mask-repeat: no-repeat;
+      opacity: 0.7;
+      filter: drop-shadow(2px 2px 2px rgba(0,0,0,0.8));
   }
 </style>
