@@ -1,5 +1,6 @@
 ---
 title: ""
+omit_header_text: true
 ---
 
 {{< bitcoin_timer >}}
