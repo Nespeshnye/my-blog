@@ -20,6 +20,6 @@ theme = 'ananke'
   weight = 20
 
   [[menu.main]]
-  name = "[ КРЫШКИ И ЖЕТОНЫ ]"
+  name = "КРЫШКИ И ЖЕТОНЫ"
   url = "/blockchain/"
   weight = 30
