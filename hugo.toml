@@ -18,3 +18,8 @@ theme = 'ananke'
   name = "ОСАДОК МЫСЛЕЙ"
   url = "/thoughts/"
   weight = 20
+
+  [[menu.main]]
+  name = "[ КРЫШКИ И ЖЕТОНЫ ]"
+  url = "/blockchain/"
+  weight = 30
