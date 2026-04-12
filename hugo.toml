@@ -1,6 +1,7 @@
 baseURL = 'https://nespeshnye.com/'
 languageCode = 'ru-ru'
 title = "NESPESHNYE"
+copyright = "[ v.1.0.4-alpha ] [ Connection: Secure ] [ © NESPESHNYE 2026 ]"
 theme = 'ananke'
 
 [params]
