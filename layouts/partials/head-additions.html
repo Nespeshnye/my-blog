@@ -16,20 +16,48 @@ body, h1, h2, h3, h4, h5, h6, .f1, .f2, .f3, .f4, .f5 {
       opacity: 1 !important;
   }
 
-  /* 2. ФОН (ПЕПЕЛ + ЦАРАПИНЫ) */
-  html {
-      background-color: #1a1a1a !important;
-      background-image: 
-          repeating-linear-gradient(0deg, rgba(0,0,0,0.15) 0px, rgba(0,0,0,0.15) 1px, transparent 1px, transparent 2px),
-          linear-gradient(135deg, #1a1a1a 0%, #2b1d14 50%, #1a1a1a 100%) !important;
-      background-attachment: fixed !important;
-      background-size: cover !important;
+  <style>
+  /* 1. Глобальный фон: Глубокий антрацит с эффектом зернистости */
+  body {
+    background-color: #0d0d0d !important; /* Глубокий черный с теплым подтоном */
+    background-image: 
+      /* Слой 1: Центральное виньетирование (эффект старого экрана) */
+      radial-gradient(circle at center, rgba(30, 27, 24, 0.4) 0%, rgba(10, 10, 10, 1) 100%),
+      /* Слой 2: Текстура шума (процедурный зернистый фильтр) */
+      url("data:image/svg+xml,%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    background-attachment: fixed;
+    background-blend-mode: overlay;
+    opacity: 0.98; /* Легкое смягчение контраста */
   }
-  body { background: transparent !important; }
-  .bg-black, .bg-white, .bg-near-white, header, main, footer, article, section, .ph3, .pv4 {
-      background: transparent !important;
-      border: none !important;
+
+  /* 2. Окисление ссылок: Переход от меди к патине */
+  a, .link, .ananke-social a {
+    color: #cd7f32; /* Цвет свежей меди */
+    text-decoration: none;
+    transition: color 1.5s cubic-bezier(0.4, 0, 0.2, 1), text-shadow 1s ease;
+    position: relative;
   }
+
+  a:hover {
+    color: #4fb3a5 !important; /* Цвет патины (окисленная бирюза) */
+    text-shadow: 0 0 8px rgba(79, 179, 165, 0.4);
+  }
+
+  /* 3. Улучшение читаемости мелкого текста */
+  p, li, span {
+    color: #e2e2e2; /* Светло-серый с теплым оттенком (не чистый белый) */
+    letter-spacing: 0.02em;
+    line-height: 1.6;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8); /* Тень для отделения текста от шума */
+  }
+
+  /* Акцентные заголовки (Биткоин-золото) */
+  h1, h2, h3 {
+    color: #f7931a !important;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+</style> 
 
   /* 3. НАДПИСЬ SLOW LIVING В УГЛУ */
   .f3.fw2.hs-headline, header a.f3, header .dib.pv1 { color: transparent !important; position: relative; }
