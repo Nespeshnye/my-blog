@@ -5,74 +5,58 @@
 <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
 
 <style>
-body, h1, h2, h3, h4, h5, h6, .f1, .f2, .f3, .f4, .f5 {
-  font-family: 'JetBrains Mono', monospace !important;
-}
+  /* 1. ШРИФТЫ И ОБЩИЙ ЦВЕТ ТЕКСТА */
+  body, h1, h2, h3, h4, h5, h6, .f1, .f2, .f3, .f4, .f5 {
+    font-family: 'JetBrains Mono', monospace !important;
+  }
 
-  /* 1. ШРИФТ И ЦВЕТ */
   body, p, h1, h2, h3, h4, h5, h6, a, span, li, blockquote, div {
       font-family: 'Courier New', Courier, monospace !important;
       color: #cd7f32 !important;
       opacity: 1 !important;
   }
 
-  <style>
-  /* 1. Глобальный фон: Глубокий антрацит с эффектом зернистости */
-  body {
-    background-color: #0d0d0d !important; /* Глубокий черный с теплым подтоном */
-    background-image: 
-      /* Слой 1: Центральное виньетирование (эффект старого экрана) */
-      radial-gradient(circle at center, rgba(30, 27, 24, 0.4) 0%, rgba(10, 10, 10, 1) 100%),
-      /* Слой 2: Текстура шума (процедурный зернистый фильтр) */
-      url("data:image/svg+xml,%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
-    background-attachment: fixed;
-    background-blend-mode: overlay;
-    opacity: 0.98; /* Легкое смягчение контраста */
+  /* 2. НОВЫЙ ФОН (АНТРАЦИТ + ШУМ) - ЗАМЕНА ПЕПЛА */
+  html {
+      background-color: #0d0d0d !important;
+      background-image: 
+        radial-gradient(circle at center, rgba(30, 27, 24, 0.4) 0%, rgba(10, 10, 10, 1) 100%),
+        url("data:image/svg+xml,%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E") !important;
+      background-attachment: fixed !important;
+      background-blend-mode: overlay !important;
+      background-size: auto !important; /* Для шума cover не нужен */
   }
 
-  /* 2. Окисление ссылок: Переход от меди к патине */
-  a, .link, .ananke-social a {
-    color: #cd7f32; /* Цвет свежей меди */
-    text-decoration: none;
-    transition: color 1.5s cubic-bezier(0.4, 0, 0.2, 1), text-shadow 1s ease;
-    position: relative;
+  body { background: transparent !important; }
+
+  .bg-black, .bg-white, .bg-near-white, header, main, footer, article, section, .ph3, .pv4 {
+      background: transparent !important;
+      border: none !important;
   }
 
+  /* 3. ОКИСЛЕНИЕ ССЫЛОК (НОВОЕ) */
+  a {
+      transition: color 1.2s ease, text-shadow 0.8s ease !important;
+  }
   a:hover {
-    color: #4fb3a5 !important; /* Цвет патины (окисленная бирюза) */
-    text-shadow: 0 0 8px rgba(79, 179, 165, 0.4);
+      color: #4fb3a5 !important; /* Цвет патины */
+      text-shadow: 0 0 5px rgba(79, 179, 165, 0.3);
   }
 
-  /* 3. Улучшение читаемости мелкого текста */
-  p, li, span {
-    color: #e2e2e2; /* Светло-серый с теплым оттенком (не чистый белый) */
-    letter-spacing: 0.02em;
-    line-height: 1.6;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8); /* Тень для отделения текста от шума */
-  }
-
-  /* Акцентные заголовки (Биткоин-золото) */
-  h1, h2, h3 {
-    color: #f7931a !important;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-  }
-</style> 
-
-  /* 3. НАДПИСЬ SLOW LIVING В УГЛУ */
+  /* 4. НАДПИСЬ SLOW LIVING В УГЛУ (ВАШ ОРИГИНАЛ) */
   .f3.fw2.hs-headline, header a.f3, header .dib.pv1 { color: transparent !important; position: relative; }
   .f3.fw2.hs-headline::after, header a.f3::after, header .dib.pv1::after {
       content: "Slow Living"; color: #cd7f32 !important; position: absolute; left: 0; top: 0; visibility: visible;
   }
 
-  /* 4. МЕДНЫЙ СКРОЛЛБАР */
+  /* 5. МЕДНЫЙ СКРОЛЛБАР (ВАШ ОРИГИНАЛ) */
   ::-webkit-scrollbar { width: 10px; }
   ::-webkit-scrollbar-track { background: #1a1a1a; }
   ::-webkit-scrollbar-thumb { background: #8b4513; border: 1px solid #cd7f32; }
   ::-webkit-scrollbar-thumb:hover { background: #cd7f32; }
   * { scrollbar-width: thin; scrollbar-color: #8b4513 #1a1a1a; }
 
-  /* 5. ЛОГОТИП СТРЕКОЗЫ (ТОТ САМЫЙ РАБОЧИЙ ВАРИАНТ) */
+  /* 6. ЛОГОТИП СТРЕКОЗЫ (СОХРАНЕН БЕЗ ИЗМЕНЕНИЙ) */
   body::after {
       content: "";
       position: fixed;
@@ -117,18 +101,15 @@ body, h1, h2, h3, h4, h5, h6, .f1, .f2, .f3, .f4, .f5 {
 </script>
 
 <style>
-  /* Создаем отдельный контейнер, который не влияет на body и другие элементы */
+  /* ЭФФЕКТ ТЕРМИНАЛА (СКАНЕР) - ВАШ ОРИГИНАЛ */
   #terminal-overlay {
-    fixed: top 0 left 0;
     position: fixed;
-    width: 100vw;
-    height: 100vh;
-    pointer-events: none; /* Полная прозрачность для кликов */
-    z-index: 9999; /* Поверх всего */
+    top: 0; left: 0;
+    width: 100vw; height: 100vh;
+    pointer-events: none;
+    z-index: 9999;
     overflow: hidden;
   }
-
-  /* Тонкая сетка строк (Scanline Static) */
   #terminal-overlay::before {
     content: "";
     position: absolute;
@@ -137,24 +118,14 @@ body, h1, h2, h3, h4, h5, h6, .f1, .f2, .f3, .f4, .f5 {
     background-size: 100% 3px;
     opacity: 0.3;
   }
-
-  /* Бегущая полоса (The Beam) */
   #terminal-overlay::after {
     content: "";
     position: absolute;
-    top: -100px;
-    left: 0;
-    width: 100%;
-    height: 100px;
-    background: linear-gradient(
-      to bottom,
-      transparent 0%,
-      rgba(255, 255, 255, 0.02) 50%,
-      transparent 100%
-    );
+    top: -100px; left: 0;
+    width: 100%; height: 100px;
+    background: linear-gradient(to bottom, transparent 0%, rgba(255, 255, 255, 0.02) 50%, transparent 100%);
     animation: scanline_move 10s linear infinite;
   }
-
   @keyframes scanline_move {
     0% { top: -100px; }
     100% { top: 100vh; }
