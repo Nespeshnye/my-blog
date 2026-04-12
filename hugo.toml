@@ -5,6 +5,7 @@ theme = 'ananke'
 
 [params]
   description = "Static signal node. Analysis of long-duration assets, physical settlement layer, and infrastructure resilience under synthetic media collapse."
+  images = ["og-image.png"]
   # Мы оставляем это поле пустым, так как весь код теперь в head-additions.html
   custom_css = []
   background_color_class = ""
