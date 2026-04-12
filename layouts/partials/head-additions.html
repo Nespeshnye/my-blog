@@ -16,22 +16,20 @@
       opacity: 1 !important;
   }
 
-  /* 2. НОВЫЙ ФОН (АНТРАЦИТ + ШУМ) - ЗАМЕНА ПЕПЛА */
+  /* 2. ОБНОВЛЕННЫЙ ФОН (АНТРАЦИТ + ЖИВОЙ ШУМ) */
   html {
-      background-color: #0d0d0d !important;
+      /* Изменяем чистый черный на глубокий серый, чтобы сработал overlay */
+      background-color: #161616 !important; 
       background-image: 
-        radial-gradient(circle at center, rgba(30, 27, 24, 0.4) 0%, rgba(10, 10, 10, 1) 100%),
-        url("data:image/svg+xml,%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E") !important;
+        /* Слой 1: Мягкое виньетирование для объема */
+        radial-gradient(circle at center, rgba(45, 40, 35, 0.4) 0%, rgba(10, 10, 10, 0.9) 100%),
+        /* Слой 2: Улучшенный процедурный шум */
+        url("data:image/svg+xml,%3Csvg viewBox='0 0 250 250' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.80' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E") !important;
+      
       background-attachment: fixed !important;
-      background-blend-mode: overlay !important;
-      background-size: auto !important; /* Для шума cover не нужен */
-  }
-
-  body { background: transparent !important; }
-
-  .bg-black, .bg-white, .bg-near-white, header, main, footer, article, section, .ph3, .pv4 {
-      background: transparent !important;
-      border: none !important;
+      /* Добавляем прозрачность для шума через opacity, если overlay слишком темный */
+      background-blend-mode: color-dodge !important; 
+      background-size: auto !important;
   }
 
   /* 3. ОКИСЛЕНИЕ ССЫЛОК (НОВОЕ) */
