@@ -5,56 +5,56 @@
 <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
 
 <style>
-  /* 1. ШРИФТЫ И ОБЩИЙ ЦВЕТ ТЕКСТА */
+  /* 1. ШРИФТ И ЦВЕТ (ОРИГИНАЛ) */
   body, h1, h2, h3, h4, h5, h6, .f1, .f2, .f3, .f4, .f5 {
     font-family: 'JetBrains Mono', monospace !important;
   }
-
   body, p, h1, h2, h3, h4, h5, h6, a, span, li, blockquote, div {
       font-family: 'Courier New', Courier, monospace !important;
       color: #cd7f32 !important;
       opacity: 1 !important;
   }
 
-  /* 2. ОБНОВЛЕННЫЙ ФОН (АНТРАЦИТ + ЖИВОЙ ШУМ) */
+  /* 2. ФОН: ГЛУБОКИЙ АНТРАЦИТ (Оригинальная структура с новыми цветами) */
   html {
-      /* Изменяем чистый черный на глубокий серый, чтобы сработал overlay */
-      background-color: #161616 !important; 
-      background-image: 
-        /* Слой 1: Мягкое виньетирование для объема */
-        radial-gradient(circle at center, rgba(45, 40, 35, 0.4) 0%, rgba(10, 10, 10, 0.9) 100%),
-        /* Слой 2: Улучшенный процедурный шум */
-        url("data:image/svg+xml,%3Csvg viewBox='0 0 250 250' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.80' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E") !important;
-      
+      background-color: #0d0d0d !important;
+      background-image:
+          /* Старая сетка/пепел стала чуть контрастнее для темного фона */
+          repeating-linear-gradient(0deg, rgba(0,0,0,0.3) 0px, rgba(0,0,0,0.3) 1px, transparent 1px, transparent 2px),
+          /* Градиент заменен с меди на холодный терминальный мрак */
+          linear-gradient(135deg, #050505 0%, #1a1a1a 50%, #050505 100%) !important;
       background-attachment: fixed !important;
-      /* Добавляем прозрачность для шума через opacity, если overlay слишком темный */
-      background-blend-mode: color-dodge !important; 
-      background-size: auto !important;
+      background-size: cover !important;
+  }
+  
+  /* ЗАЩИТА ОТ БЕЛЫХ БЛОКОВ (ОРИГИНАЛ) */
+  body { background: transparent !important; }
+  .bg-black, .bg-white, .bg-near-white, header, main, footer, article, section, .ph3, .pv4 {
+      background: transparent !important;
+      border: none !important;
   }
 
-  /* 3. ОКИСЛЕНИЕ ССЫЛОК (НОВОЕ) */
-  a {
-      transition: color 1.2s ease, text-shadow 0.8s ease !important;
-  }
+  /* 2.1 ОКИСЛЕНИЕ ССЫЛОК (НОВОЕ) */
+  a { transition: color 1.2s ease, text-shadow 0.8s ease !important; }
   a:hover {
-      color: #4fb3a5 !important; /* Цвет патины */
+      color: #4fb3a5 !important; 
       text-shadow: 0 0 5px rgba(79, 179, 165, 0.3);
   }
 
-  /* 4. НАДПИСЬ SLOW LIVING В УГЛУ (ВАШ ОРИГИНАЛ) */
+  /* 3. НАДПИСЬ SLOW LIVING В УГЛУ (ОРИГИНАЛ) */
   .f3.fw2.hs-headline, header a.f3, header .dib.pv1 { color: transparent !important; position: relative; }
   .f3.fw2.hs-headline::after, header a.f3::after, header .dib.pv1::after {
       content: "Slow Living"; color: #cd7f32 !important; position: absolute; left: 0; top: 0; visibility: visible;
   }
 
-  /* 5. МЕДНЫЙ СКРОЛЛБАР (ВАШ ОРИГИНАЛ) */
+  /* 4. МЕДНЫЙ СКРОЛЛБАР (ОРИГИНАЛ) */
   ::-webkit-scrollbar { width: 10px; }
   ::-webkit-scrollbar-track { background: #1a1a1a; }
   ::-webkit-scrollbar-thumb { background: #8b4513; border: 1px solid #cd7f32; }
   ::-webkit-scrollbar-thumb:hover { background: #cd7f32; }
   * { scrollbar-width: thin; scrollbar-color: #8b4513 #1a1a1a; }
 
-  /* 6. ЛОГОТИП СТРЕКОЗЫ (СОХРАНЕН БЕЗ ИЗМЕНЕНИЙ) */
+  /* 5. ЛОГОТИП СТРЕКОЗЫ (ОРИГИНАЛ) */
   body::after {
       content: "";
       position: fixed;
@@ -99,7 +99,7 @@
 </script>
 
 <style>
-  /* ЭФФЕКТ ТЕРМИНАЛА (СКАНЕР) - ВАШ ОРИГИНАЛ */
+  /* ЭФФЕКТ ТЕРМИНАЛА (Сканлайн) - ОРИГИНАЛ */
   #terminal-overlay {
     position: fixed;
     top: 0; left: 0;
