@@ -1,9 +1,10 @@
 baseURL = 'https://my-blog-7v0.pages.dev/'
 languageCode = 'ru-ru'
-title = "NESPESHNYE"
+title = "NESPESHNYE — Autonomous Node Infrastructure"
 theme = 'ananke'
 
 [params]
+  description = "Static signal node. Analysis of long-duration assets, physical settlement layer, and infrastructure resilience under synthetic media collapse."
   # Мы оставляем это поле пустым, так как весь код теперь в head-additions.html
   custom_css = []
   background_color_class = ""
