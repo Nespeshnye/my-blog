@@ -133,3 +133,41 @@
 </style>
 
 <div id="terminal-overlay"></div>
+
+<script>
+  (function() {
+    // 1. Пытаемся найти существующую иконку, которую добавила тема
+    let favicon = document.querySelector('link[rel="icon"]') || document.querySelector('link[rel="shortcut icon"]');
+    
+    // 2. Если иконка не найдена (маловероятно), создаем её программно
+    if (!favicon) {
+        favicon = document.createElement('link');
+        favicon.rel = 'icon';
+        document.getElementsByTagName('head')[0].appendChild(favicon);
+    }
+
+    // Сохраняем путь к вашей текущей основной иконке (Active)
+    // Если в hugo.toml прописан другой путь, замените '/favicon.png' на него
+    const activeIcon = favicon.href || '/favicon.png'; 
+    const staticIcon = '/favicon-static.png';
+
+    const originalTitle = "NESPESHNYE — Autonomous Node Infrastructure";
+    const staticTitle = "[ STATIC ] NESPESHNYE";
+
+    // Функция переключения состояний
+    const updateNodeStatus = (status) => {
+      if (status === 'active') {
+        favicon.href = activeIcon;
+        document.title = originalTitle;
+      } else {
+        favicon.href = staticIcon;
+        document.title = staticTitle;
+      }
+    };
+
+    // Слушатель изменения видимости вкладки
+    document.addEventListener('visibilitychange', () => {
+      updateNodeStatus(document.hidden ? 'static' : 'active');
+    });
+  })();
+</script>
