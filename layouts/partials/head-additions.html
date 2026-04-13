@@ -15,15 +15,17 @@
       opacity: 1 !important;
   }
 
-  /* 2. ФОН: ТЕКСТУРИРОВАННАЯ МЕДЬ И АНТРАЦИТ */
+  /* 2. ФОН: ТЕКСТУРИРОВАННАЯ МЕДЬ И КРУПНАЯ СЕТКА ПИП-БОЯ */
   html {
       background-color: #1a1a1a !important;
       background-image:
-          /* Слой 1: Текстурная сетка (твой оригинал) */
-          repeating-linear-gradient(0deg, rgba(0,0,0,0.2) 0px, rgba(0,0,0,0.2) 1px, transparent 1px, transparent 2px),
-          /* Слой 2: Металлический блик (имитация объема) */
-          radial-gradient(circle at 50% 50%, rgba(205, 127, 50, 0.07) 0%, transparent 70%),
-          /* Слой 3: Глубокий градиент с переходом в темную бронзу */
+          /* Слой 1: Укрупненная сетка (Квадратики Pip-Boy) */
+          /* Мы увеличили шаг с 2px до 4px, чтобы сетка была видна на мобильных */
+          repeating-linear-gradient(0deg, rgba(0,0,0,0.25) 0px, rgba(0,0,0,0.25) 2px, transparent 2px, transparent 4px),
+          repeating-linear-gradient(90deg, rgba(0,0,0,0.25) 0px, rgba(0,0,0,0.25) 2px, transparent 2px, transparent 4px),
+          /* Слой 2: Металлический блик */
+          radial-gradient(circle at 50% 50%, rgba(205, 127, 50, 0.1) 0%, transparent 80%),
+          /* Слой 3: Глубокий градиент */
           linear-gradient(135deg, #0d0d0d 0%, #1e140a 40%, #2b1d14 70%, #0d0d0d 100%) !important;
       background-attachment: fixed !important;
       background-size: cover !important;
