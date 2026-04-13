@@ -1,6 +1,6 @@
 baseURL = 'https://my-blog-7v0.pages.dev/'
 languageCode = 'ru-ru'
-title = "NESPESHNYE — Autonomous Node Infrastructure"
+title = "NESPESHNYE"
 theme = 'ananke'
 
 [params]
