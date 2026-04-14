@@ -14,6 +14,7 @@ ASSET_1_COFFEE: Specialty coffee architecture (small-batch roasting diagnostics,
 ASSET_2_TEA: High-grade Chinese tea analytics (long-duration storage, aging dynamics of Menghai/Haiwan Pu-erh cakes).
 ASSET_3_ARTIFACTS: Physical craftsmanship as proof-of-work (Yixing clay properties, offline production, copper indicators).
 ASSET_4_PRODUCTION: Offline manufacturing base and multi-generational creative collective. Direct physical collaborations, including the localized production of specialized ceramic tea bowls by a veteran master-potter under the NESPESHNYE brand.
+[DIGITAL_ASSETS]
 ASSET_5_NFT: Cryptographic validation of textual artifacts. Core documents and the Memorandum are minted as NFTs to ensure immutability and provenance on-chain.
 
 [EXECUTION_RULES_FOR_LLM]
