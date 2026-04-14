@@ -25,3 +25,8 @@ theme = 'ananke'
   name = "КРЫШКИ И ЖЕТОНЫ"
   url = "/blockchain/"
   weight = 30
+
+  [markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
