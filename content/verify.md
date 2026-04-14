@@ -13,26 +13,43 @@ _build:
 
 <script>
   (function() {
-      function updateSession() {
-          const chars = 'ABCDEF0123456789';
-          let r = '';
-          for (let i = 0; i < 4; i++) r += chars.charAt(Math.floor(Math.random() * chars.length));
+      const lines = [
+          "[ INITIALIZING CONNECTION... ]",
+          "[ ESTABLISHING SECURE TUNNEL... ]",
+          "[ CONNECTION ESTABLISHED ]",
+          "[ SESSION ID: 0x7V0-RAND-2026 ]",
+          "[ SIGNAL TIMESTAMP: TIME UTC ]"
+      ];
+
+      function updateAndPrint() {
+          const container = document.getElementById('terminal-session-info');
+          if (!container) return;
           
-          const now = new Date();
-          const ts = now.toISOString().replace('T', ' ').substring(0, 19) + " UTC";
+          // Генерируем данные один раз
+          const r = Math.random().toString(16).substr(2, 4).toUpperCase();
+          const ts = new Date().toISOString().replace('T', ' ').substring(0, 19) + " UTC";
           
-          const sElem = document.getElementById('session-id');
-          const tElem = document.getElementById('timestamp');
-          
-          if (sElem) sElem.textContent = "0x7V0-" + r + "-2026";
-          if (tElem) tElem.textContent = ts;
+          container.innerHTML = ''; // Очищаем для анимации
+          let lineIndex = 0;
+
+          function printLine() {
+              if (lineIndex < lines.length) {
+                  let text = lines[lineIndex]
+                      .replace('RAND', r)
+                      .replace('TIME', ts);
+                  
+                  const div = document.createElement('div');
+                  div.textContent = text;
+                  container.appendChild(div);
+                  
+                  lineIndex++;
+                  setTimeout(printLine, 150); // Скорость появления строк (150мс)
+              }
+          }
+          printLine();
       }
-      // Запуск при загрузке
-      if (document.readyState === 'loading') {
-          document.addEventListener('DOMContentLoaded', updateSession);
-      } else {
-          updateSession();
-      }
+
+      window.onload = updateAndPrint;
   })();
 </script>
 
