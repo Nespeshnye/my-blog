@@ -1,6 +1,8 @@
 ---
 title: "AUTHENTICATION TERMINAL"
 url: "/verify"
+_build:
+  list: never
 ---
 
 # [ SYSTEM STATUS: VERIFIED ]
