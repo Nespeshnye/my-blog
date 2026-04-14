@@ -5,51 +5,68 @@ _build:
   list: never
 ---
 
-<div id="terminal-session-info" style="font-family: 'Courier New', monospace; font-size: 0.8rem; color: #b87333; opacity: 0.7; margin: 10px 0 20px 0; line-height: 1.3; text-transform: uppercase;">
-    <div>[ CONNECTION ESTABLISHED ]</div>
-    <div>[ SESSION ID: <span id="session-id">0x7V0-LOADING-2026</span> ]</div>
-    <div>[ SIGNAL TIMESTAMP: <span id="timestamp">...</span> ]</div>
+<div id="terminal-container" style="font-family: 'Courier New', monospace; font-size: 0.9rem; color: #b87333; opacity: 0.9; margin: 20px 0; line-height: 1.5; min-height: 100px;">
+    <div id="terminal-content"></div><span id="terminal-cursor" style="display: inline-block; width: 10px; height: 1.2rem; background: #b87333; vertical-align: middle; margin-left: 5px;"></span>
 </div>
+
+<style>
+  /* Анимация мерцания курсора */
+  #terminal-cursor {
+      animation: blink 0.8s infinite;
+  }
+  @keyframes blink {
+      0%, 49% { opacity: 1; }
+      50%, 100% { opacity: 0; }
+  }
+</style>
 
 <script>
   (function() {
+      const content = document.getElementById('terminal-content');
+      const cursor = document.getElementById('terminal-cursor');
+      
+      const r = Math.random().toString(16).substr(2, 4).toUpperCase();
+      const ts = new Date().toISOString().replace('T', ' ').substring(0, 19) + " UTC";
+
       const lines = [
-          "[ INITIALIZING CONNECTION... ]",
-          "[ ESTABLISHING SECURE TUNNEL... ]",
-          "[ CONNECTION ESTABLISHED ]",
-          "[ SESSION ID: 0x7V0-RAND-2026 ]",
-          "[ SIGNAL TIMESTAMP: TIME UTC ]"
+          "INITIALIZING NODE 7V0...",
+          "ESTABLISHING SECURE TUNNEL",
+          "CONNECTION ESTABLISHED",
+          "SESSION ID: 0x7V0-" + r + "-2026",
+          "SIGNAL TIMESTAMP: " + ts
       ];
 
-      function updateAndPrint() {
-          const container = document.getElementById('terminal-session-info');
-          if (!container) return;
-          
-          // Генерируем данные один раз
-          const r = Math.random().toString(16).substr(2, 4).toUpperCase();
-          const ts = new Date().toISOString().replace('T', ' ').substring(0, 19) + " UTC";
-          
-          container.innerHTML = ''; // Очищаем для анимации
-          let lineIndex = 0;
+      let lineIndex = 0;
+      let charIndex = 0;
 
-          function printLine() {
-              if (lineIndex < lines.length) {
-                  let text = lines[lineIndex]
-                      .replace('RAND', r)
-                      .replace('TIME', ts);
-                  
-                  const div = document.createElement('div');
-                  div.textContent = text;
-                  container.appendChild(div);
-                  
-                  lineIndex++;
-                  setTimeout(printLine, 150); // Скорость появления строк (150мс)
+      function typeChar() {
+          if (lineIndex < lines.length) {
+              const currentLineText = lines[lineIndex];
+              
+              if (charIndex === 0) {
+                  const newLine = document.createElement('div');
+                  content.appendChild(newLine);
               }
+
+              if (charIndex < currentLineText.length) {
+                  content.lastChild.textContent += currentLineText[charIndex];
+                  charIndex++;
+                  // Скорость печати букв (30-50мс - идеально для терминала)
+                  setTimeout(typeChar, 40); 
+              } else {
+                  // Пауза между строками
+                  lineIndex++;
+                  charIndex = 0;
+                  setTimeout(typeChar, 400); 
+              }
+          } else {
+              // Текст окончен, курсор просто мигает в конце
           }
-          printLine();
       }
 
-      window.onload = updateAndPrint;
+      window.onload = function() {
+          setTimeout(typeChar, 500); // Небольшая задержка перед стартом
+      };
   })();
 </script>
 
