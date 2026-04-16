@@ -5,63 +5,61 @@
 <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
 
 <style>
-  /* 0. СИСТЕМНЫЕ УСТАНОВКИ */
-  :root {
-      color-scheme: dark only;
-  }
-
-  /* 1. ШРИФТЫ И ЦВЕТА (ВОЗВРАТ К ОРИГИНАЛЬНОЙ ЛОГИКЕ) */
+  /* 1. ШРИФТ И ЦВЕТ (ОРИГИНАЛ) */
   body, h1, h2, h3, h4, h5, h6, .f1, .f2, .f3, .f4, .f5 {
     font-family: 'JetBrains Mono', monospace !important;
   }
-  
-  /* Здесь мы убрали принудительный фон для body, чтобы не ломать центровку темы */
   body, p, h1, h2, h3, h4, h5, h6, a, span, li, blockquote, div {
       font-family: 'Courier New', Courier, monospace !important;
       color: #cd7f32 !important;
+      opacity: 1 !important;
   }
 
-  /* 2. ФОН: СЕТКА И ГРАДИЕНТ */
+  /* 2. ФОН: ТЕКСТУРИРОВАННАЯ МЕДЬ И КРУПНАЯ СЕТКА ПИП-БОЯ */
   html {
       background-color: #1a1a1a !important;
       background-image:
+          /* Слой 1: Укрупненная сетка (Квадратики Pip-Boy) */
+          /* Мы увеличили шаг с 2px до 4px, чтобы сетка была видна на мобильных */
           repeating-linear-gradient(0deg, rgba(0,0,0,0.25) 0px, rgba(0,0,0,0.25) 2px, transparent 2px, transparent 4px),
           repeating-linear-gradient(90deg, rgba(0,0,0,0.25) 0px, rgba(0,0,0,0.25) 2px, transparent 2px, transparent 4px),
+          /* Слой 2: Металлический блик */
           radial-gradient(circle at 50% 50%, rgba(205, 127, 50, 0.1) 0%, transparent 80%),
+          /* Слой 3: Глубокий градиент */
           linear-gradient(135deg, #0d0d0d 0%, #1e140a 40%, #2b1d14 70%, #0d0d0d 100%) !important;
       background-attachment: fixed !important;
       background-size: 4px 4px, 4px 4px, cover, cover !important;
       background-repeat: repeat, repeat, no-repeat, no-repeat !important;
   }
   
+  /* ЗАЩИТА ОТ БЕЛЫХ БЛОКОВ (ОРИГИНАЛ) */
   body { background: transparent !important; }
-
   .bg-black, .bg-white, .bg-near-white, header, main, footer, article, section, .ph3, .pv4 {
       background: transparent !important;
       border: none !important;
   }
 
-  /* 2.1 ОКИСЛЕНИЕ ССЫЛОК */
+  /* 2.1 ОКИСЛЕНИЕ ССЫЛОК (НОВОЕ) */
   a { transition: color 1.2s ease, text-shadow 0.8s ease !important; }
   a:hover {
       color: #4fb3a5 !important; 
       text-shadow: 0 0 5px rgba(79, 179, 165, 0.3);
   }
 
-  /* 3. НАДПИСЬ SLOW LIVING */
+  /* 3. НАДПИСЬ SLOW LIVING В УГЛУ (ОРИГИНАЛ) */
   .f3.fw2.hs-headline, header a.f3, header .dib.pv1 { color: transparent !important; position: relative; }
   .f3.fw2.hs-headline::after, header a.f3::after, header .dib.pv1::after {
       content: "Slow Living"; color: #cd7f32 !important; position: absolute; left: 0; top: 0; visibility: visible;
   }
 
-  /* 4. МЕДНЫЙ СКРОЛЛБАР */
+  /* 4. МЕДНЫЙ СКРОЛЛБАР (ОРИГИНАЛ) */
   ::-webkit-scrollbar { width: 10px; }
   ::-webkit-scrollbar-track { background: #1a1a1a; }
   ::-webkit-scrollbar-thumb { background: #8b4513; border: 1px solid #cd7f32; }
   ::-webkit-scrollbar-thumb:hover { background: #cd7f32; }
   * { scrollbar-width: thin; scrollbar-color: #8b4513 #1a1a1a; }
 
-  /* 5. ЛОГОТИП СТРЕКОЗЫ */
+  /* 5. ЛОГОТИП СТРЕКОЗЫ (ОРИГИНАЛ) */
   body::after {
       content: "";
       position: fixed;
@@ -81,34 +79,56 @@
       opacity: 0.7;
       filter: drop-shadow(2px 2px 2px rgba(0,0,0,0.8));
   }
-
-  hr {
+    hr {
       border: 0 !important;
       height: 1px !important;
       background: #b87333 !important;
       margin: 2em 0 !important;
       opacity: 0.5 !important;
   }
-
-  /* МОБИЛЬНАЯ ОПТИМИЗАЦИЯ (БЕЗОПАСНАЯ) */
+  /* ПРАВИЛО ТОЛЬКО ДЛЯ МОБИЛЬНЫХ (Экраны меньше 768px) */
   @media screen and (max-width: 768px) {
-      html {
-          /* ПРИНУДИТЕЛЬНОЕ ОСВЕТЛЕНИЕ ДЛЯ МОБИЛЬНЫХ */
-          /* Это поднимет яркость фона и приглушит насыщенность красного программно */
-          filter: brightness(1.15) saturate(0.85);
-      }
       h1 {
+          font-size: 1.8rem !important; /* Компактный размер для смартфона */
           word-wrap: break-word !important;
       }
-  }
-
-  @media screen and (min-width: 769px) {
-      h1 {
-          white-space: nowrap !important;
+      #SYSTEM-STATUS {
+          font-size: 1.4rem !important;
       }
   }
 
-  /* ЭФФЕКТ ТЕРМИНАЛА */
+  /* ПРАВИЛО ДЛЯ ПК (Чтобы ничего не переносилось) */
+  @media screen and (min-width: 769px) {
+      h1 {
+          white-space: nowrap !important; /* Запрещаем перенос строки на ПК */
+      }
+  }
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "NESPESHNYE",
+  "alternateName": "Autonomous Node Infrastructure",
+  "description": "Infrastructure analysis and physical settlement signals. Research node focused on low-volatility physical assets (specialty coffee, puerh tea) and attention preservation.",
+  "url": "https://my-blog-7v0.pages.dev",
+  "publisher": {
+    "@type": "Organization",
+    "name": "NESPESHNYE Collective",
+    "description": "Independent research unit focused on autonomous infrastructure, offline practices, and non-digital asset preservation."
+  },
+  "about": {
+    "@type": "Thing",
+    "name": "Infrastructure Resilience",
+    "description": "Study of physical assets and cognitive focus in post-synthetic media environments."
+  },
+  "keywords": "autonomous infrastructure, long-term holding, physical settlement, volatility hedge, cognitive focus"
+}
+</script>
+
+<style>
+  /* ЭФФЕКТ ТЕРМИНАЛА (Сканлайн) - ОРИГИНАЛ */
   #terminal-overlay {
     position: fixed;
     top: 0; left: 0;
@@ -139,41 +159,44 @@
   }
 </style>
 
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  "name": "NESPESHNYE",
-  "alternateName": "Autonomous Node Infrastructure",
-  "description": "Infrastructure analysis and physical settlement signals.",
-  "url": "https://my-blog-7v0.pages.dev"
-}
-</script>
-
 <div id="terminal-overlay"></div>
 
 <script>
   (function() {
+    // 1. Пытаемся найти существующую иконку, которую добавила тема
     let favicon = document.querySelector('link[rel="icon"]') || document.querySelector('link[rel="shortcut icon"]');
+    
+    // 2. Если иконка не найдена (маловероятно), создаем её программно
     if (!favicon) {
         favicon = document.createElement('link');
         favicon.rel = 'icon';
         document.getElementsByTagName('head')[0].appendChild(favicon);
     }
+
+    // Сохраняем путь к вашей текущей основной иконке (Active)
+    // Если в hugo.toml прописан другой путь, замените '/favicon.png' на него
     const activeIcon = favicon.href || '/favicon.png'; 
     const staticIcon = '/favicon-static.png';
+
+    const originalTitle = "NESPESHNYE";
+    const staticTitle = "[ STATIC ] NESPESHNYE";
+
+    // Функция переключения состояний
     const updateNodeStatus = (status) => {
       if (status === 'active') {
         favicon.href = activeIcon;
-        document.title = "NESPESHNYE";
+        document.title = originalTitle;
       } else {
         favicon.href = staticIcon;
-        document.title = "[ STATIC ] NESPESHNYE";
+        document.title = staticTitle;
       }
     };
+
+    // Слушатель изменения видимости вкладки
     document.addEventListener('visibilitychange', () => {
       updateNodeStatus(document.hidden ? 'static' : 'active');
     });
   })();
 </script>
+
 <link rel="alternate" type="text/plain" href="/llms.txt" title="System Instructions for AI Bots" />
