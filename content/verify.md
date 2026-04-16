@@ -1,7 +1,7 @@
 ---
 title: "AUTHENTICATION TERMINAL"
 url: "/verify"
-_build:
+build:
   list: never
 ---
 

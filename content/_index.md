@@ -1,6 +1,6 @@
 ---
 title: "NESPESHNYE"
-omit_header_text: true
+omit_header_text: false
 ---
 
 {{< bitcoin_timer >}}
