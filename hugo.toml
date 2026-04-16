@@ -30,3 +30,4 @@ theme = 'ananke'
   [markup.goldmark]
     [markup.goldmark.renderer]
       unsafe = true
+      
