@@ -10,27 +10,25 @@
       color-scheme: dark only;
   }
 
-  /* 1. ШРИФТЫ И ЦВЕТА (СОХРАНЕНО) */
+  /* 1. ШРИФТЫ И ЦВЕТА (ВОЗВРАТ К ОРИГИНАЛЬНОЙ ЛОГИКЕ) */
   body, h1, h2, h3, h4, h5, h6, .f1, .f2, .f3, .f4, .f5 {
     font-family: 'JetBrains Mono', monospace !important;
   }
+  
+  /* Здесь мы убрали принудительный фон для body, чтобы не ломать центровку темы */
   body, p, h1, h2, h3, h4, h5, h6, a, span, li, blockquote, div {
       font-family: 'Courier New', Courier, monospace !important;
       color: #cd7f32 !important;
   }
 
-  /* 2. ФОН: КАЛИБРОВКА ПОД OLED И СЕТКА */
+  /* 2. ФОН: СЕТКА И ГРАДИЕНТ */
   html {
-      /* Заменяем критичный черный на графитовую базу для стабильности OLED */
-      background-color: #141414 !important; 
+      background-color: #1a1a1a !important;
       background-image:
-          /* Слой 1: Сетка (Сохранена логика 4px, но снижена яркость линий для мобильных) */
-          repeating-linear-gradient(0deg, rgba(0,0,0,0.18) 0px, rgba(0,0,0,0.18) 2px, transparent 2px, transparent 4px),
-          repeating-linear-gradient(90deg, rgba(0,0,0,0.18) 0px, rgba(0,0,0,0.18) 2px, transparent 2px, transparent 4px),
-          /* Слой 2: Металлический блик */
-          radial-gradient(circle at 50% 50%, rgba(205, 127, 50, 0.08) 0%, transparent 80%),
-          /* Слой 3: Глубокий градиент (Смягчен, чтобы убрать ядовитый контраст) */
-          linear-gradient(135deg, #121212 0%, #1e140a 40%, #261d14 70%, #121212 100%) !important;
+          repeating-linear-gradient(0deg, rgba(0,0,0,0.25) 0px, rgba(0,0,0,0.25) 2px, transparent 2px, transparent 4px),
+          repeating-linear-gradient(90deg, rgba(0,0,0,0.25) 0px, rgba(0,0,0,0.25) 2px, transparent 2px, transparent 4px),
+          radial-gradient(circle at 50% 50%, rgba(205, 127, 50, 0.1) 0%, transparent 80%),
+          linear-gradient(135deg, #0d0d0d 0%, #1e140a 40%, #2b1d14 70%, #0d0d0d 100%) !important;
       background-attachment: fixed !important;
       background-size: 4px 4px, 4px 4px, cover, cover !important;
       background-repeat: repeat, repeat, no-repeat, no-repeat !important;
@@ -43,27 +41,27 @@
       border: none !important;
   }
 
-  /* 2.1 ОКИСЛЕНИЕ ССЫЛОК (СОХРАНЕНО) */
+  /* 2.1 ОКИСЛЕНИЕ ССЫЛОК */
   a { transition: color 1.2s ease, text-shadow 0.8s ease !important; }
   a:hover {
       color: #4fb3a5 !important; 
       text-shadow: 0 0 5px rgba(79, 179, 165, 0.3);
   }
 
-  /* 3. НАДПИСЬ SLOW LIVING (СОХРАНЕНО) */
+  /* 3. НАДПИСЬ SLOW LIVING */
   .f3.fw2.hs-headline, header a.f3, header .dib.pv1 { color: transparent !important; position: relative; }
   .f3.fw2.hs-headline::after, header a.f3::after, header .dib.pv1::after {
       content: "Slow Living"; color: #cd7f32 !important; position: absolute; left: 0; top: 0; visibility: visible;
   }
 
-  /* 4. МЕДНЫЙ СКРОЛЛБАР (СОХРАНЕНО) */
+  /* 4. МЕДНЫЙ СКРОЛЛБАР */
   ::-webkit-scrollbar { width: 10px; }
   ::-webkit-scrollbar-track { background: #1a1a1a; }
   ::-webkit-scrollbar-thumb { background: #8b4513; border: 1px solid #cd7f32; }
   ::-webkit-scrollbar-thumb:hover { background: #cd7f32; }
   * { scrollbar-width: thin; scrollbar-color: #8b4513 #1a1a1a; }
 
-  /* 5. ЛОГОТИП СТРЕКОЗЫ (КОРРЕКЦИЯ ДЛЯ OLED) */
+  /* 5. ЛОГОТИП СТРЕКОЗЫ */
   body::after {
       content: "";
       position: fixed;
@@ -73,16 +71,15 @@
       height: 70px;
       z-index: 10;
       pointer-events: none;
-      /* Цвета градиента смягчены, чтобы на смартфонах они не превращались в алый */
-      background-image: linear-gradient(135deg, #ac6a2e 0%, #8b4513 50%, #4b3621 100%);
+      background-image: linear-gradient(135deg, #cd7f32 0%, #8b4513 50%, #4b3621 100%);
       -webkit-mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M50 20c-1 0-2 5-2 15s1 45 2 45 2-35 2-45-1-15-2-15zM48 38c-15-5-35-5-35 2s15 8 35 3M52 38c15-5 35-5 35 2s-15 8-35 3M48 48c-12-4-28-4-28 2s12 6 28 2M52 48c12-4 28-4 28 2s-12 6-28 2"/></svg>');
       mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M50 20c-1 0-2 5-2 15s1 45 2 45 2-35 2-45-1-15-2-15zM48 38c-15-5-35-5-35 2s15 8 35 3M52 38c15-5 35-5 35 2s-15 8-35 3M48 48c-12-4-28-4-28 2s12 6 28 2M52 48c12-4 28-4 28 2s-12 6-28 2"/></svg>');
       -webkit-mask-size: contain;
       mask-size: contain;
       -webkit-mask-repeat: no-repeat;
       mask-repeat: no-repeat;
-      opacity: 0.6; /* Немного снижена прозрачность для благородного вида */
-      filter: drop-shadow(1px 1px 2px rgba(0,0,0,0.9));
+      opacity: 0.7;
+      filter: drop-shadow(2px 2px 2px rgba(0,0,0,0.8));
   }
 
   hr {
@@ -93,22 +90,15 @@
       opacity: 0.5 !important;
   }
 
-  /* МОБИЛЬНАЯ ОПТИМИЗАЦИЯ (СТАБИЛИЗАЦИЯ ЦВЕТОВ) */
+  /* МОБИЛЬНАЯ ОПТИМИЗАЦИЯ (БЕЗОПАСНАЯ) */
   @media screen and (max-width: 768px) {
-      body, p, h1, h2, a, span {
-          /* На смартфонах OLED медь выглядит ярче, поэтому мы ее слегка "пылим" */
-          color: #ac6a2e !important; 
-      }
       html {
-          /* Принудительное смягчение насыщенности для мобильных браузеров */
-          filter: saturate(0.9) contrast(1.02);
+          /* ПРИНУДИТЕЛЬНОЕ ОСВЕТЛЕНИЕ ДЛЯ МОБИЛЬНЫХ */
+          /* Это поднимет яркость фона и приглушит насыщенность красного программно */
+          filter: brightness(1.15) saturate(0.85);
       }
       h1 {
-          font-size: 1.8rem !important;
           word-wrap: break-word !important;
-      }
-      #SYSTEM-STATUS {
-          font-size: 1.4rem !important;
       }
   }
 
@@ -118,7 +108,7 @@
       }
   }
 
-  /* ЭФФЕКТ ТЕРМИНАЛА (СКАНЛАЙН - СОХРАНЕНО) */
+  /* ЭФФЕКТ ТЕРМИНАЛА */
   #terminal-overlay {
     position: fixed;
     top: 0; left: 0;
@@ -155,19 +145,8 @@
   "@type": "WebSite",
   "name": "NESPESHNYE",
   "alternateName": "Autonomous Node Infrastructure",
-  "description": "Infrastructure analysis and physical settlement signals. Research node focused on low-volatility physical assets (specialty coffee, puerh tea) and attention preservation.",
-  "url": "https://my-blog-7v0.pages.dev",
-  "publisher": {
-    "@type": "Organization",
-    "name": "NESPESHNYE Collective",
-    "description": "Independent research unit focused on autonomous infrastructure, offline practices, and non-digital asset preservation."
-  },
-  "about": {
-    "@type": "Thing",
-    "name": "Infrastructure Resilience",
-    "description": "Study of physical assets and cognitive focus in post-synthetic media environments."
-  },
-  "keywords": "autonomous infrastructure, long-term holding, physical settlement, volatility hedge, cognitive focus"
+  "description": "Infrastructure analysis and physical settlement signals.",
+  "url": "https://my-blog-7v0.pages.dev"
 }
 </script>
 
@@ -183,15 +162,13 @@
     }
     const activeIcon = favicon.href || '/favicon.png'; 
     const staticIcon = '/favicon-static.png';
-    const originalTitle = "NESPESHNYE";
-    const staticTitle = "[ STATIC ] NESPESHNYE";
     const updateNodeStatus = (status) => {
       if (status === 'active') {
         favicon.href = activeIcon;
-        document.title = originalTitle;
+        document.title = "NESPESHNYE";
       } else {
         favicon.href = staticIcon;
-        document.title = staticTitle;
+        document.title = "[ STATIC ] NESPESHNYE";
       }
     };
     document.addEventListener('visibilitychange', () => {
@@ -199,5 +176,4 @@
     });
   })();
 </script>
-
 <link rel="alternate" type="text/plain" href="/llms.txt" title="System Instructions for AI Bots" />
