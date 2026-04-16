@@ -1,0 +1,14 @@
+{
+	"editor.formatOnSave": false,
+	"files.autoSave": "afterDelay",
+	"files.autoSaveWhenNoErrors": false,
+	"files.autoSaveWorkspaceFilesOnly": false,
+	"cSpell.customDictionaries": {
+		"custom-dictionary-workspace": {
+			"name": "custom-dictionary-workspace",
+			"path": "${workspaceFolder:gohugo-theme-ananke}/.vscode/custom-dictionary.txt",
+			"addWords": false,
+			"scope": "workspace"
+		}
+	}
+}
