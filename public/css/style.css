@@ -1,0 +1,48 @@
+/* Глобальная центровка текста на всех страницах */
+.nested-copy-line-height, .prose, article, main {
+    text-align: center !important;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Центровка вашего любимого таймера */
+#btc-countdown, .btc-timer-card {
+    display: inline-block !important;
+    margin: 20px auto !important;
+}
+
+/* Увеличение шрифта для смартфонов */
+@media screen and (max-width: 600px) {
+    #timer-display {
+        font-size: 1.8rem !important; /* Делаем цифры крупными и читаемыми */
+    }
+    /* Убираем огромные пустые поля темы по бокам на мобильном */
+    .ph4-l, .pa3 {
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+    }
+}
+/* ============================================================
+   УСИЛЕННЫЙ БЛОК ОЧИСТКИ ГЛАВНОЙ СТРАНИЦЫ
+   ============================================================ */
+
+/* Скрываем центральный блок заголовка целиком через его структуру */
+.home header div.tc-l.pv4.pv6-l,
+.home header div.tc-l.pv3.pv4-l,
+.home .header-title-container,
+.home .tc-l.mt2.mt3-l.ph3.ph4-l {
+    display: none !important;
+    visibility: hidden !important;
+    height: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+/* Скрываем сам текст заголовка, если он пробился */
+.home h1.f2, 
+.home h1.f1, 
+.home h1.f-subheadline-l,
+.home .lh-title {
+    display: none !important;
+}

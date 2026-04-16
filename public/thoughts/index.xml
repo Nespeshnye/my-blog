@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><?xml-stylesheet href="/rss-style.xsl" type="text/xsl"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>NESPESHNYE</title>
+    <link>https://my-blog-7v0.pages.dev/thoughts/</link>
+    <description>Recent content on NESPESHNYE</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ru-ru</language>
+    
+    
+    <item>
+      <title>Protocol: Slow Living (Memorandum)</title>
+      <link>https://my-blog-7v0.pages.dev/</link>
+      <pubDate>Thu, 16 Apr 2026 21:30:54 +0300</pubDate>
+      <guid>https://my-blog-7v0.pages.dev/</guid>
+      <description>Автономная инфраструктура и защита внимания в эпоху цифрового шума.</description>
+    </item>
+
+    
+    
+  </channel>
+</rss>
